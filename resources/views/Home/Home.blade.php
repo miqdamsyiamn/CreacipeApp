@@ -16,17 +16,17 @@
 </div>
 <div class="row">
     <div class="col-md-4">
-        <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Resep 1">
+        <img src="https://via.placeholder.com/300x200" class="img-fluid custom-border" alt="Resep 1">
         <h4 class="mt-3">Resep Terbaru</h4>
         <p>Cari resep terbaru untuk inspirasi memasak harianmu.</p>
     </div>
     <div class="col-md-4">
-        <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Resep 2">
+        <img src="https://via.placeholder.com/300x200" class="img-fluid custom-border" alt="Resep 2">
         <h4 class="mt-3">Populer</h4>
         <p>Resep populer yang paling banyak dicoba oleh pengguna.</p>
     </div>
     <div class="col-md-4">
-        <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Resep 3">
+        <img src="https://via.placeholder.com/300x200" class="img-fluid custom-border" alt="Resep 3">
         <h4 class="mt-3">Komunitas</h4>
         <p>Bagikan resep terbaikmu dengan komunitas kami.</p>
     </div>

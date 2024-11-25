@@ -6,62 +6,36 @@
     <title>@yield('title', 'Dashboard Admin')</title>
     <!-- Tambahkan link ke Bootstrap atau stylesheet lainnya -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .sidebar {
-            background-color: #343a40;
-            height: 100vh;
-            padding-top: 20px;
-        }
-        .sidebar a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: block;
-        }
-        .sidebar a:hover {
-            background-color: #495057;
-        }
-        .active {
-            background-color: #ffc107;
-            color: #343a40;
-        }
-        .topbar {
-            background-color: #ffc107;
-            padding: 10px 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('assets/admin.css') }}">
 </head>
 <body>
     <!-- Topbar -->
-    <div class="topbar d-flex justify-content-between align-items-center">
+    <div class="topbar d-flex justify-content-between align-items-center p-3" style="background-color: #3CB371; color: white;">
         <span>SELAMAT DATANG ADMIN | DASHBOARD</span>
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit">Search</button>
+            <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
     </div>
 
     <div class="d-flex">
         <!-- Sidebar -->
-        <div class="sidebar d-flex flex-column justify-content-between">
-        <!-- sidebar atas -->
-        <div class="">
-            <a href="{{ route('admin.dashboard') }}" class="active">Dashboard</a>
-            <a href="{{ route('admin.editors') }}">Kelola Editor</a>
-            <a href="">Kelola Member</a>
+        <div class="sidebar d-flex flex-column justify-content-between p-3" style="background-color: #ffffff; border-right: 1px solid #ddd; width: 250px;">
+            <!-- Sidebar Menu -->
+            <div>
+                <a href="{{ route('admin.dashboard') }}" class="nav-link active">Dashboard</a>
+                <a href="{{ route('admin.editors') }}" class="nav-link">Kelola Editor</a>
+                <a href="#" class="nav-link">Kelola Member</a>
+            </div>
+            <!-- Logout Button -->
+            <div>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger w-100 mt-2">Logout</button>
+                </form>
+            </div>
         </div>
-        <!-- sidebar bawah -->
-        <div class="mt-0">
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-danger w-100 mt-2">Logout</button>
-        </form>
-        </div>
-        </div>
-        <!-- end sidebar -->
+        <!-- End Sidebar -->
         
         <!-- Main Content -->
         <div class="flex-grow-1 p-4">

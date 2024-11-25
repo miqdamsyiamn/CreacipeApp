@@ -16,8 +16,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row mt-4">
         <!-- Card untuk Mengelola Member -->
         <div class="col-md-6">
             <div class="card shadow-sm">

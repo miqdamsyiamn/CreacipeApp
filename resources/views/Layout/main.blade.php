@@ -6,35 +6,15 @@
     <title>@yield('title', 'Resepku')</title>
     <!-- Tambahkan link ke Bootstrap atau stylesheet lainnya -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .hero-section {
-            background-image: url('https://via.placeholder.com/1200x400'); /* Ganti URL dengan gambar background */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 60px 20px;
-        }
-        .hero-section h1 {
-            font-size: 3rem;
-        }
-        .hero-section p {
-            font-size: 1.2rem;
-        }
-        .btn-orange {
-            background-color: #FF7F50;
-            color: white;
-        }
-        .btn-orange:hover {
-            background-color: #FF6347;
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset('assets/style.css')}}">
+
     @yield('styles') <!-- Untuk tambahan CSS -->
 </head>
 <body>
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light custom-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">Resepku</a>
+        <a class="navbar-brand" href="#">Creacipe</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>

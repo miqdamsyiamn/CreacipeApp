@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.sidebar {
+    background-color: #343a40;
+    height: 100vh;
+    padding-top: 20px;
+}
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+.sidebar a:hover {
+    background-color: #495057;
+}
+.active {
+    background-color: #ffc107;
+    color: #343a40;
+}
+.topbar {
+    background-color: #ffc107;
+    padding: 10px 20px;
+}
+
+.hero-section {
+            background-image: url('images/background.jpg'); /* Ganti URL dengan gambar background */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+        .btn-orange {
+            background-color: #FF7F50;
+            color: white;
+        }
+        .btn-orange:hover {
+            background-color: #FF6347;
+        }
+        .btn-login {
+            background-color: #3CB371; /* Background color */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        
+        .btn-login:hover {
+            background-color: #2e8b57; /* Darker shade for hover effect */
+            cursor: pointer; /* Change cursor on hover */
+        }
+
+        
+        .custom-navbar{
+            background-color: #3cb371;
+        }
+        .custom-border{
+            border: 5px solid #3cb371;
+            border-radius: 8px;
+        }

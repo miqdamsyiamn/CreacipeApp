@@ -5,6 +5,10 @@
 @section('content')
 <div class="container">
     <h1 class="text-center mb-4">Dashboard Editor</h1>
-    <p>Selamat datang di dashboard editor. Anda dapat mengelola resep di sini.</p>
+    <p class="text-center">Selamat datang di dashboard editor. Anda dapat mengelola resep di sini.</p>
+    <div class="text-center">
+        <button class="btn btn-primary">Tambah Resep</button>
+        <button class="btn btn-secondary">Lihat Semua Resep</button>
+    </div>
 </div>
 @endsection
