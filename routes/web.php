@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\RecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,4 @@ Route::delete('/editor/recipes/{id}', [EditorController::class, 'delete'])->name
 
 //untuk registrasi member
 Route::post('/register', [LoginController::class, 'register'])->name('register.post');
-
-
 
