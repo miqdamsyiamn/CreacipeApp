@@ -7,7 +7,7 @@
                         <!-- Left Section -->
                         <div class="login-left text-center">
                             <h1>Join Us!</h1>
-                            <img src="https://via.placeholder.com/100x100" alt="Logo">
+                            <img src="{{asset('assets/images/logo.png')}}" alt="Logo">
                             <p class="mt-4">Already a member? 
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Log in here</a>
                             </p>
@@ -40,5 +40,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>
 </div>
