@@ -67,3 +67,44 @@ body {
             border: 5px solid #3cb371;
             border-radius: 8px;
         }
+
+        .carousel-item {
+            height: 400px; /* Smaller height for the carousel items */
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide-1 {
+            background-image: url('images/slide1.png'); /* Replace with your actual image path */
+        }
+        
+        .slide-2 {
+            background-image: url('images/slide3.jpg'); /* Replace with your actual image path */
+        }
+        
+        .slide-3 {
+            background-image: url('images/slide4.png'); /* Replace with your actual image path */
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for captions */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .carousel-caption h1,
+        .carousel-caption p {
+            color: #fff; /* Ensure text is readable against the image */
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-caption h1 {
+                font-size: 2.5rem;
+            }
+        
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+        }
+        
+        
