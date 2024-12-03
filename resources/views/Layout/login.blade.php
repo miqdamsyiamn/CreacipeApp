@@ -7,7 +7,7 @@
                         <!-- Left Section -->
                         <div class="login-left text-center">
                             <h1>Welcome!</h1>
-                            <img src="https://via.placeholder.com/100x100" alt="Logo">
+                            <img src="{{asset('assets/images/logo.png')}}" alt="Logo">
                             <p class="mt-4">Not a member yet? 
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register now</a>
                             </p>
