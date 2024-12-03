@@ -27,7 +27,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profil</a></li>
-                            <li><a class="dropdown-item" href="#">Koleksi Resep</a></li>
+                            <li><a class="dropdown-item" href="{{ route('recipes.index') }}">Koleksi Resep</a></li>
                             <li>
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
