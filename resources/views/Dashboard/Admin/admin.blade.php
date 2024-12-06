@@ -22,7 +22,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Kelola Member</h5>
                     <p class="card-text">Aktifkan atau nonaktifkan member sesuai kebutuhan.</p>
-                    <a href="" class="btn btn-primary">Kelola Member</a>
+                    <a href="{{ route('admin.members') }}" class="btn btn-primary">Kelola Member</a>
                 </div>
             </div>
         </div>

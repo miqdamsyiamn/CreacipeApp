@@ -11,10 +11,16 @@
     @yield('styles') <!-- Untuk tambahan CSS -->
 </head>
 <body>
+@if(session('error'))
+<div class="alert alert-danger">
+{{ session('error') }}
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif 
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">Creacipe</a>
+        <a class="navbar-brand" href="{{ route('home') }}">Creacipe</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +33,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profil</a></li>
-                            <li><a class="dropdown-item" href="#">Koleksi Resep</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addRecipeModal">Tambah Resep</a></li>
+                            <li><a class="dropdown-item" href="{{ route('member.recipes.index') }}">Resepku</a></li>
                             <li>
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
@@ -71,11 +78,14 @@
     <!-- Include modal detail registrasi -->
     @include('layout.detailregister')
 
+    <!-- Modal Tambah Resep -->
+    @include('member.recipes.create')
+
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
-            <p>&copy; 2024 Resepku. Semua Hak Dilindungi.</p>
+            <p>&copy; 2024 Creacipe. Semua Hak Dilindungi.</p>
         </div>
     </footer>
 

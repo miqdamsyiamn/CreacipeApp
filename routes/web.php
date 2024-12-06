@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\RecipesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,7 @@ Route::delete('/admin/editors/{id}', [AdminController::class, 'deleteEditor'])->
 //untuk mengelola member
 Route::get('/admin/members', [AdminController::class, 'members'])->name('admin.members');
 Route::patch('/admin/members/{id}/toggle', [AdminController::class, 'toggleStatus'])->name('admin.members.toggle');
+Route::delete('/admin/members/{id}', [AdminController::class, 'deleteMember'])->middleware(['auth', 'admin'])->name('admin.members.delete');
 
 //login editor
 Route::get('/editor/dashboard', function () {
@@ -51,13 +53,27 @@ Route::get('/editor/dashboard', function () {
 })->middleware(['auth', 'editor'])->name('editor.dashboard');
 
 //mengelola resep oleh editor
-Route::get('/editor/recipes', [EditorController::class, 'index'])->name('editor.recipes');
+Route::get('/editor/recipes', [EditorController::class, 'index'])->name('editor.recipes.index');
 Route::patch('/editor/recipes/{id}/approve', [EditorController::class, 'approve'])->name('editor.recipes.approve');
 Route::patch('/editor/recipes/{id}/decline', [EditorController::class, 'decline'])->name('editor.recipes.decline');
 Route::delete('/editor/recipes/{id}', [EditorController::class, 'delete'])->name('editor.recipes.delete');
 
 //untuk registrasi member
 Route::post('/register', [LoginController::class, 'register'])->name('register.post');
+
+// Route untuk menampilkan form tambah resep
+Route::get('/member/recipes/create', [RecipesController::class, 'create'])->name('member.recipes.create');
+// Route untuk menyimpan resep
+Route::post('/member/recipes', [RecipesController::class, 'store'])->name('member.recipes.store');
+//menampilkan resep yang di buat member ke resepku
+Route::get('/member/recipes', [RecipesController::class, 'index'])->name('member.recipes.index');
+// Edit resep
+Route::get('/member/recipes/{id}/edit', [RecipesController::class, 'edit'])->name('member.recipes.edit');
+// Update resep
+Route::put('/member/recipes/{id}', [RecipesController::class, 'update'])->name('member.recipes.update');
+
+
+
 
 
 
