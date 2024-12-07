@@ -107,4 +107,30 @@ body {
             }
         }
         
-        
+// pada resep ku
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    object-fit: cover;
+    height: 150px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.badge.bg-success {
+    background-color: #28a745;
+    font-size: 0.75rem;
+}
+

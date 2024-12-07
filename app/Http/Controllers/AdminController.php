@@ -54,4 +54,19 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Status berhasil diperbarui.');
     }
+
+    // Kelola Member
+    public function members()
+    {
+        // Ambil semua user dengan role member (role_id = 3)
+        $members = User::where('role_id', 3)->with('status')->paginate(10);
+        return view('dashboard.admin.member', compact('members'));
+    }
+
+    public function deleteMember($id)
+    {
+        // Hapus editor berdasarkan ID
+        User::findOrFail($id)->delete();
+        return redirect()->route('admin.members')->with('success', 'Member berhasil dihapus.');
+    }
 }

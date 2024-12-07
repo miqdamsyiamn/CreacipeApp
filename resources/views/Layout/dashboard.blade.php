@@ -25,7 +25,7 @@
             <div>
                 <a href="{{ route('admin.dashboard') }}" class="nav-link active">Dashboard</a>
                 <a href="{{ route('admin.editors') }}" class="nav-link">Kelola Editor</a>
-                <a href="#" class="nav-link">Kelola Member</a>
+                <a href="{{ route('admin.members') }}" class="nav-link">Kelola Member</a>
             </div>
             <!-- Logout Button -->
             <div>

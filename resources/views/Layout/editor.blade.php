@@ -20,7 +20,7 @@
         <div class="sidebar d-flex flex-column justify-content-between">
             <div>
                 <a href="{{ route('editor.dashboard') }}" class="active">Dashboard</a>
-                <a href="#">Kelola Resep</a>
+                <a href="{{ route('editor.recipes.index') }}">Kelola Resep</a>
             </div>
             <div class="mt-0">
                 <form action="{{ route('logout') }}" method="POST">

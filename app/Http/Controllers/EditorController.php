@@ -10,7 +10,10 @@ class EditorController extends Controller
     // Tampilkan daftar resep
     public function index()
     {
-        $recipes = Recipe::with('user')->paginate(10); // Dengan relasi user
+        // Ambil semua resep dengan relasi user dan status
+        $recipes = Recipe::with(['user', 'status'])->paginate(10);
+
+        // Arahkan ke view recipes.blade.php dengan data resep
         return view('dashboard.editor.recipes', compact('recipes'));
     }
 
@@ -18,17 +21,18 @@ class EditorController extends Controller
     public function approve($id)
     {
         $recipe = Recipe::findOrFail($id);
-        $recipe->status = 'approved'; // Status bisa diubah sesuai kebutuhan
+        $recipe->status_id = 2; // 2 = Approved
         $recipe->save();
 
-        return redirect()->back()->with('success', 'Resep berhasil di-approve.');
+        return redirect()->back()->with('success', 'Resep berhasil disetujui.');
     }
 
     // Decline resep
     public function decline($id)
     {
+        // Set status menjadi declined (ID status: 3)
         $recipe = Recipe::findOrFail($id);
-        $recipe->status = 'declined'; // Status bisa diubah sesuai kebutuhan
+        $recipe->status_id = 3; // 3 = Declined
         $recipe->save();
 
         return redirect()->back()->with('success', 'Resep berhasil ditolak.');

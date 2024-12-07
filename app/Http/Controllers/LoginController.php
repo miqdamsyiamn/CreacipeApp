@@ -29,10 +29,9 @@ class LoginController extends Controller
     $user = User::where('email', $request->email)->first();
 
     if ($user && $user->status_id != 1) { // Cek status_id, 1 = Aktif
-        return back()->withErrors([
-            'email' => 'Akun Anda telah dinonaktifkan. Hubungi admin untuk informasi lebih lanjut.',
-        ])->onlyInput('email');
+        return back()->with('error', 'Akun Anda telah dinonaktifkan.')->onlyInput('email');
     }
+    
 
     // Proses autentikasi
     if (Auth::attempt($credentials)) {
