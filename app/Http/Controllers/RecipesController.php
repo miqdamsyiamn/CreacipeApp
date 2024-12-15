@@ -108,4 +108,35 @@ class RecipesController extends Controller
 
         return redirect()->route('member.recipes.index')->with('success', 'Resep berhasil diperbarui.');
     }
+
+    // public function showApprovedRecipes()
+    // {
+    //     // Mengambil semua resep dengan status_id = 2
+    //     $approvedRecipes = Recipe::where('status_id', 2)->latest()->get();
+    
+    //     // Kirimkan data ke view
+    //     return view('home.home', compact('approvedRecipes'));
+    // }
+    
+    public function home()
+{
+    $approvedRecipes = Recipe::where('status_id', 2)->latest()->get(); // Ambil resep dengan status_id = 2
+    return view('home.home', compact('approvedRecipes')); // Kirim ke view
+}
+
+public function show($id)
+{
+    // Ambil data resep berdasarkan ID
+    $recipe = Recipe::findOrFail($id);
+
+    // Kirim data resep ke view
+    return view('recipes.show', compact('recipe'));
+}
+
+
+
+
+
+
+
 }
