@@ -4,11 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
-<<<<<<< HEAD
-use App\Http\Controllers\RecipeController;
-=======
 use App\Http\Controllers\RecipesController;
->>>>>>> a24e37dd3d406fe5508eb4df9f38ed4c90021266
 
 /*
 |--------------------------------------------------------------------------
@@ -65,8 +61,6 @@ Route::delete('/editor/recipes/{id}', [EditorController::class, 'delete'])->name
 //untuk registrasi member
 Route::post('/register', [LoginController::class, 'register'])->name('register.post');
 
-<<<<<<< HEAD
-=======
 // Route untuk menampilkan form tambah resep
 Route::get('/member/recipes/create', [RecipesController::class, 'create'])->name('member.recipes.create');
 // Route untuk menyimpan resep
@@ -77,10 +71,11 @@ Route::get('/member/recipes', [RecipesController::class, 'index'])->name('member
 Route::get('/member/recipes/{id}/edit', [RecipesController::class, 'edit'])->name('member.recipes.edit');
 // Update resep
 Route::put('/member/recipes/{id}', [RecipesController::class, 'update'])->name('member.recipes.update');
+//menampilkan resep yang sudah di approve editor ke home
+// Route::get('/home', [RecipesController::class, 'showApprovedRecipes'])->name('home');
+Route::get('/', [RecipesController::class, 'home'])->name('home');
+
+Route::get('/recipes/{id}', action: [RecipesController::class, 'show'])->name('recipes.show')->middleware('auth');
 
 
 
-
-
-
->>>>>>> a24e37dd3d406fe5508eb4df9f38ed4c90021266
