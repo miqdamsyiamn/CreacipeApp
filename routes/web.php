@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\RecipesController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,10 @@ use App\Http\Controllers\RecipesController;
 Route::get('/', function () {
     return view('home.home');
 })->name('home');
+//untuk search resep pada home
+Route::get('/search', [SearchController::class, 'search'])->name('home.search');
+// Search pada Resepmu
+Route::get('/member/recipes/search', [SearchController::class, 'searchUserRecipes'])->name('member.recipes.search');
 
 // Menampilkan halaman home dengan modal login
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -41,11 +46,16 @@ Route::get('/admin/editors', [AdminController::class, 'editors'])->middleware(['
 Route::post('/admin/editors', [AdminController::class, 'storeEditor'])->middleware(['auth', 'admin'])->name('admin.editors.store');
 Route::patch('/admin/editors/{id}/toggle', [AdminController::class, 'toggleStatus'])->middleware(['auth', 'admin'])->name('admin.editors.toggle');
 Route::delete('/admin/editors/{id}', [AdminController::class, 'deleteEditor'])->middleware(['auth', 'admin'])->name('admin.editors.delete');
+// Search Editor di Admin
+Route::get('/admin/editors/search', [SearchController::class, 'searchEditors'])->name('admin.editors.search');
 
 //untuk mengelola member
 Route::get('/admin/members', [AdminController::class, 'members'])->name('admin.members');
 Route::patch('/admin/members/{id}/toggle', [AdminController::class, 'toggleStatus'])->name('admin.members.toggle');
 Route::delete('/admin/members/{id}', [AdminController::class, 'deleteMember'])->middleware(['auth', 'admin'])->name('admin.members.delete');
+//search member di admin
+Route::get('/admin/members/search', [SearchController::class, 'searchMembers'])->name('admin.members.search');
+
 
 //login editor
 Route::get('/editor/dashboard', function () {

@@ -8,21 +8,27 @@
 
     <!-- Notifikasi Sukses -->
     @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
     @endif
 
     <!-- Validasi Error -->
     @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
+
+    <!-- notif pencarian -->
+    @if(isset($message))
+    <div class="alert alert-info">{{ $message }}</div>
+    @endif
+
 
     <!-- Daftar Member -->
     <div class="card">
