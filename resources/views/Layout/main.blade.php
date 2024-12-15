@@ -25,6 +25,11 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Kolom Pencarian -->
+            <form class="d-flex ms-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Cari resep" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Cari</button>
+            </form>
             <ul class="navbar-nav ms-auto">
                 @auth
                     <li class="nav-item dropdown">
@@ -50,9 +55,16 @@
                     </li>
                 @endauth
             </ul>
+            
         </div>
     </div>
 </nav>
+
+@if(session('message'))
+    <div class="alert alert-warning">
+        {{ session('message') }}
+    </div>
+@endif
 
 
     <!-- Hero Section -->
@@ -81,7 +93,6 @@
     <!-- Modal Tambah Resep -->
     @include('member.recipes.create')
 
-
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
@@ -94,3 +105,4 @@
     @yield('scripts') <!-- Untuk tambahan JS -->
 </body>
 </html>
+

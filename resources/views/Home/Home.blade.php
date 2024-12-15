@@ -1,6 +1,6 @@
 @extends('layout.main') <!-- Menggunakan layout utama -->
 
-@section('title', 'Home') <!-- Mengatur judul halaman -->
+@section('title', 'Home') <!-- Judul halaman -->
 
 @section('hero') <!-- Hero Section -->
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"> <!-- Slides every 3 seconds -->
@@ -40,26 +40,38 @@
 </div>
 @endsection
 
+
+
 @section('content') <!-- Konten Utama -->
-<div class="text-center mb-5">
-    <h2>Cari dan Temukan Resep dari Komunitas</h2>
-    <p>Melalui fitur pencarian, kamu dapat menemukan resep berdasarkan bahan atau kategori yang diinginkan.</p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <img src="https://via.placeholder.com/300x200" class="img-fluid custom-border" alt="Resep 1">
-        <h4 class="mt-3">Resep Terbaru</h4>
-        <p>Cari resep terbaru untuk inspirasi memasak harianmu.</p>
-    </div>
-    <div class="col-md-4">
-        <img src="https://via.placeholder.com/300x200" class="img-fluid custom-border" alt="Resep 2">
-        <h4 class="mt-3">Populer</h4>
-        <p>Resep populer yang paling banyak dicoba oleh pengguna.</p>
-    </div>
-    <div class="col-md-4">
-        <img src="https://via.placeholder.com/300x200" class="img-fluid custom-border" alt="Resep 3">
-        <h4 class="mt-3">Komunitas</h4>
-        <p>Bagikan resep terbaikmu dengan komunitas kami.</p>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Resep Pilihan</h2>
+    <div class="row">
+        
+        @forelse($approvedRecipes as $recipe) <!-- Variabel dari controller -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset($recipe->image ?? 'https://via.placeholder.com/300x200') }}" 
+                        class="card-img-top" alt="{{ $recipe->title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $recipe->title }}</h5>
+                        <p class="card-text text-truncate">{{ $recipe->description }}</p>
+                         <!-- Menampilkan nama pembuat -->
+                <p class="card-text"><strong>Diposting oleh:</strong> {{ $recipe->user->name }}</p>
+                @auth
+                <!-- Tampilkan tombol jika sudah login -->
+                <a href="{{ route('recipes.show', $recipe->id) }}" class="btn btn-primary">Lihat Resep</a>
+            @else
+                <!-- Tampilkan tombol untuk membuka modal login jika belum login -->
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">Lihat Resep</button>
+            @endauth
+
+                        
+                    </div>
+                </div>
+            </div>
+        @empty
+            <p class="text-center">Belum ada resep yang disetujui.</p>
+        @endforelse
     </div>
 </div>
 @endsection
