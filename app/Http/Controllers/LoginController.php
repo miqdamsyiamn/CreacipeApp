@@ -13,7 +13,10 @@ class LoginController extends Controller
 {
     public function login()
     {
-        return view('home.home'); // Mengarahkan ke view home
+        // Ambil resep dengan status_id = 2
+    $approvedRecipes = \App\Models\Recipe::where('status_id', 2)->latest()->get();
+
+    return view('home.home', compact('approvedRecipes'));
     }
 
     // Proses login
@@ -48,9 +51,8 @@ class LoginController extends Controller
         }
     }
 
-    return back()->withErrors([
-        'email' => 'The provided credentials do not match our records.',
-    ])->onlyInput('email');
+    return redirect()->back()->withErrors(['login_error' => 'Email atau password salah.'])->onlyInput('email');
+
     }
 
     // Proses logout
@@ -72,7 +74,9 @@ class LoginController extends Controller
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|max:255|unique:users,email',
-        'password' => 'required|min:8|confirmed',
+        'password' => 'required|min:8|confirmed', ], [
+            'password.min' => 'Password harus terdiri dari minimal 8 karakter.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
     ]);
 
     // Simpan user dengan role member
@@ -94,5 +98,8 @@ class LoginController extends Controller
     // Redirect ke halaman login
     return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
+
+    
+    
     
 }
