@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\RecipesController;
+use App\Http\Controllers\ProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +68,7 @@ Route::get('/member/recipes/create', [RecipesController::class, 'create'])->name
 // Route untuk menyimpan resep
 Route::post('/member/recipes', [RecipesController::class, 'store'])->name('member.recipes.store');
 //menampilkan resep yang di buat member ke resepku
-Route::get('/member/recipes', [RecipesController::class, 'index'])->name('member.recipes.index');
+Route::get('/member/recipes', action: [RecipesController::class, 'index'])->name('member.recipes.index');
 // Edit resep
 Route::get('/member/recipes/{id}/edit', [RecipesController::class, 'edit'])->name('member.recipes.edit');
 // Update resep
@@ -79,3 +81,17 @@ Route::get('/recipes/{id}', action: [RecipesController::class, 'show'])->name('r
 
 
 
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile.showprofile');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+});
+
+
+Route::get('/dashboard/editor/recipes/create', [RecipesController::class, 'createByEditor'])->name('editor.recipes.create');
+
+// Rute untuk menyimpan resep yang diajukan oleh anggota (Editor bisa memilih statusnya)
+Route::post('/dashboard/editor/recipes', [RecipesController::class, 'storeByEditor'])->name('editor.recipes.store');
+
+
+// Route::get('/dashboard/editor/recipes/index', action: [RecipesController::class, 'indexEditor'])->name('dashboard.editor.recipes.index');

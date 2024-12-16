@@ -109,15 +109,6 @@ class RecipesController extends Controller
         return redirect()->route('member.recipes.index')->with('success', 'Resep berhasil diperbarui.');
     }
 
-    // public function showApprovedRecipes()
-    // {
-    //     // Mengambil semua resep dengan status_id = 2
-    //     $approvedRecipes = Recipe::where('status_id', 2)->latest()->get();
-    
-    //     // Kirimkan data ke view
-    //     return view('home.home', compact('approvedRecipes'));
-    // }
-    
     public function home()
 {
     $approvedRecipes = Recipe::where('status_id', 2)->latest()->get(); // Ambil resep dengan status_id = 2
@@ -129,9 +120,63 @@ public function show($id)
     // Ambil data resep berdasarkan ID
     $recipe = Recipe::findOrFail($id);
 
+
+    $approvedRecipes = Recipe::where('status_id', 2)->latest()->get();
+
+
     // Kirim data resep ke view
     return view('recipes.show', compact('recipe'));
 }
+
+// Membuat resep oleh editor
+public function createByEditor()
+{
+    return view('dashboard.editor.recipes.create'); // View khusus editor
+}
+
+// Menyimpan resep yang dibuat oleh editor
+public function storeByEditor(Request $request)
+{
+    $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'nullable|string',
+        'ingredients' => 'required',
+        'steps' => 'required',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+    ]);
+
+    Log::info('Validated data (Editor):', $validatedData);
+
+    // Cek apakah file image tersedia
+    if ($request->hasFile('image')) {
+        $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
+        $request->file('image')->move(public_path('assets/upload'), $imageName);
+        $validatedData['image'] = 'assets/upload/' . $imageName;
+    }
+
+    Log::info('Data before save (Editor):', $validatedData);
+
+    // Simpan resep
+    Recipe::create([
+        'title' => $validatedData['title'],
+        'description' => $validatedData['description'] ?? null,
+        'ingredients' => json_encode(explode("\n", $validatedData['ingredients'])),
+        'steps' => json_encode(explode("\n", $validatedData['steps'])),
+        'image' => $validatedData['image'] ?? null,
+        'user_id' => auth()->id(),
+        'status_id' => 2, // Status 'Approved' langsung, karena editor membuatnya
+    ]);
+
+    return redirect()->route('dashboard.editor.recipes.index')->with('success', 'Resep berhasil ditambahkan dan telah disetujui.');
+}
+
+// public function indexEditor()
+// {
+//     // Ambil semua resep dengan relasi pengguna yang membuatnya
+//     $recipes = Recipe::with('user')->latest()->paginate(6);
+
+//     return view('dashboard.editor.recipes.index', compact('recipes'));
+// }
 
 
 

@@ -40,8 +40,6 @@
 </div>
 @endsection
 
-
-
 @section('content') <!-- Konten Utama -->
 <div class="container mt-5">
     <h2 class="text-center mb-4">Resep Pilihan</h2>
@@ -55,17 +53,15 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $recipe->title }}</h5>
                         <p class="card-text text-truncate">{{ $recipe->description }}</p>
-                         <!-- Menampilkan nama pembuat -->
-                <p class="card-text"><strong>Diposting oleh:</strong> {{ $recipe->user->name }}</p>
-                @auth
-                <!-- Tampilkan tombol jika sudah login -->
-                <a href="{{ route('recipes.show', $recipe->id) }}" class="btn btn-primary">Lihat Resep</a>
-            @else
-                <!-- Tampilkan tombol untuk membuka modal login jika belum login -->
-                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">Lihat Resep</button>
-            @endauth
-
-                        
+                        <!-- Menampilkan nama pembuat -->
+                        <p class="card-text"><strong>Diposting oleh:</strong> {{ $recipe->user->name }}</p>
+                        @auth
+                            <!-- Tampilkan tombol untuk membuka modal resep -->
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal{{ $recipe->id }}">Lihat Resep</button>
+                        @else
+                            <!-- Tampilkan tombol untuk membuka modal login jika belum login -->
+                            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">Login untuk Lihat Resep</button>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -77,8 +73,9 @@
 @endsection
 
 @section('modal') <!-- Bagian Modal -->
-@include('layout.login') <!-- Memanggil modal login -->
-@include('layout.register') <!-- Memanggil modal register -->
+    @include('recipes.show') <!-- Menyertakan modal resep -->
+    @include('layout.login') <!-- Memanggil modal login -->
+    @include('layout.register') <!-- Memanggil modal register -->
 @endsection
 
 @section('scripts') <!-- Bagian Script -->

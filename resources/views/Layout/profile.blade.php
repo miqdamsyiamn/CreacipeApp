@@ -81,7 +81,6 @@
         </div>
     </section>
 
-    @include('recipes.show')
 
     <!-- Modal Login -->
     @include('layout.login')
