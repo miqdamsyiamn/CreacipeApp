@@ -67,6 +67,9 @@ Route::get('/editor/recipes', [EditorController::class, 'index'])->name('editor.
 Route::patch('/editor/recipes/{id}/approve', [EditorController::class, 'approve'])->name('editor.recipes.approve');
 Route::patch('/editor/recipes/{id}/decline', [EditorController::class, 'decline'])->name('editor.recipes.decline');
 Route::delete('/editor/recipes/{id}', [EditorController::class, 'delete'])->name('editor.recipes.delete');
+//search resep oleh editor
+Route::get('/editor/recipes/search', [SearchController::class, 'searchEditorRecipes'])->name('editor.recipes.search');
+
 
 //untuk registrasi member
 Route::post('/register', [LoginController::class, 'register'])->name('register.post');

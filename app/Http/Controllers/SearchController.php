@@ -86,4 +86,23 @@ class SearchController extends Controller
             'message' => "Hasil pencarian untuk: \"$keyword\""
         ]);
     }
+
+    public function searchEditorRecipes(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        // Query untuk mencari resep
+        $recipes = Recipe::with('user', 'status')
+            ->where('title', 'like', "%$keyword%")
+            ->orWhereHas('user', function ($query) use ($keyword) {
+                $query->where('name', 'like', "%$keyword%");
+            })
+            ->paginate(10);
+
+        // Kembalikan hasil pencarian ke halaman kelola resep
+        return view('dashboard.editor.recipes', [
+            'recipes' => $recipes,
+            'message' => "Hasil pencarian untuk: \"$keyword\""
+        ]);
+    }
 }
