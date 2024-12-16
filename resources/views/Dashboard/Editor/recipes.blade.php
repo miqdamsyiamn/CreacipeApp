@@ -8,10 +8,16 @@
 
     <!-- Notifikasi -->
     @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
     @endif
+
+    <!-- notif untuk search -->
+    @if(isset($message))
+    <div class="alert alert-info">{{ $message }}</div>
+    @endif
+
 
     <!-- Tabel Kelola Resep -->
     <div class="card">
@@ -28,46 +34,46 @@
                 </thead>
                 <tbody>
                     @forelse($recipes as $recipe)
-                        <tr>
-                            <!-- Judul Resep -->
-                            <td>{{ $recipe->title }}</td>
-                            <!-- Nama Member -->
-                            <td>{{ $recipe->user->name }}</td>
-                            <!-- Status Resep -->
-                            <td>
-                                <span class="badge 
+                    <tr>
+                        <!-- Judul Resep -->
+                        <td>{{ $recipe->title }}</td>
+                        <!-- Nama Member -->
+                        <td>{{ $recipe->user->name }}</td>
+                        <!-- Status Resep -->
+                        <td>
+                            <span class="badge 
                                     {{ $recipe->status_id == 1 ? 'bg-warning' : ($recipe->status_id == 2 ? 'bg-success' : 'bg-danger') }}">
-                                    {{ $recipe->status->name }}
-                                </span>
-                            </td>
-                            <!-- Aksi -->
-                            <td>
-                                <!-- Tombol Approve -->
-                                <form action="{{ route('editor.recipes.approve', $recipe->id) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-success btn-sm">Approve</button>
-                                </form>
+                                {{ $recipe->status->name }}
+                            </span>
+                        </td>
+                        <!-- Aksi -->
+                        <td>
+                            <!-- Tombol Approve -->
+                            <form action="{{ route('editor.recipes.approve', $recipe->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                            </form>
 
-                                <!-- Tombol Decline -->
-                                <form action="{{ route('editor.recipes.decline', $recipe->id) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-danger btn-sm">Decline</button>
-                                </form>
+                            <!-- Tombol Decline -->
+                            <form action="{{ route('editor.recipes.decline', $recipe->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-danger btn-sm">Decline</button>
+                            </form>
 
-                                <!-- Tombol Delete -->
-                                <form action="{{ route('editor.recipes.delete', $recipe->id) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-dark btn-sm">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
+                            <!-- Tombol Delete -->
+                            <form action="{{ route('editor.recipes.delete', $recipe->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-dark btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
                     @empty
-                        <tr>
-                            <td colspan="4" class="text-center">Tidak ada resep untuk dikelola.</td>
-                        </tr>
+                    <tr>
+                        <td colspan="4" class="text-center">Tidak ada resep untuk dikelola.</td>
+                    </tr>
                     @endforelse
                 </tbody>
             </table>

@@ -6,7 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\EditorRecipesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', function () {
     return view('home.home');
 })->name('home');
+//untuk search resep pada home
+Route::get('/search', [SearchController::class, 'search'])->name('home.search');
+// Search pada Resepmu
+Route::get('/member/recipes/search', [SearchController::class, 'searchUserRecipes'])->name('member.recipes.search');
 
 // Menampilkan halaman home dengan modal login
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -43,11 +48,16 @@ Route::get('/admin/editors', [AdminController::class, 'editors'])->middleware(['
 Route::post('/admin/editors', [AdminController::class, 'storeEditor'])->middleware(['auth', 'admin'])->name('admin.editors.store');
 Route::patch('/admin/editors/{id}/toggle', [AdminController::class, 'toggleStatus'])->middleware(['auth', 'admin'])->name('admin.editors.toggle');
 Route::delete('/admin/editors/{id}', [AdminController::class, 'deleteEditor'])->middleware(['auth', 'admin'])->name('admin.editors.delete');
+// Search Editor di Admin
+Route::get('/admin/editors/search', [SearchController::class, 'searchEditors'])->name('admin.editors.search');
 
 //untuk mengelola member
 Route::get('/admin/members', [AdminController::class, 'members'])->name('admin.members');
 Route::patch('/admin/members/{id}/toggle', [AdminController::class, 'toggleStatus'])->name('admin.members.toggle');
 Route::delete('/admin/members/{id}', [AdminController::class, 'deleteMember'])->middleware(['auth', 'admin'])->name('admin.members.delete');
+//search member di admin
+Route::get('/admin/members/search', [SearchController::class, 'searchMembers'])->name('admin.members.search');
+
 
 //login editor
 Route::get('/editor/dashboard', function () {
@@ -59,6 +69,9 @@ Route::get('/editor/recipes', [EditorController::class, 'index'])->name('editor.
 Route::patch('/editor/recipes/{id}/approve', [EditorController::class, 'approve'])->name('editor.recipes.approve');
 Route::patch('/editor/recipes/{id}/decline', [EditorController::class, 'decline'])->name('editor.recipes.decline');
 Route::delete('/editor/recipes/{id}', [EditorController::class, 'delete'])->name('editor.recipes.delete');
+//search resep oleh editor
+Route::get('/editor/recipes/search', [SearchController::class, 'searchEditorRecipes'])->name('editor.recipes.search');
+
 
 //untuk registrasi member
 Route::post('/register', [LoginController::class, 'register'])->name('register.post');
@@ -95,3 +108,8 @@ Route::post('/dashboard/editor/recipes', [RecipesController::class, 'storeByEdit
 
 
 // Route::get('/dashboard/editor/recipes/index', action: [RecipesController::class, 'indexEditor'])->name('dashboard.editor.recipes.index');
+
+Route::get('/dashboard/editor/recipes/index', [EditorRecipesController::class, 'indexEditor'])->name('dashboard.editor.recipes.index');
+
+// Route untuk halaman semua resep editor
+Route::get('/recipes/showeditor', [RecipesController::class, 'showEditorRecipes'])->name('recipes.showeditor');

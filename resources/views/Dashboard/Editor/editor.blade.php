@@ -8,7 +8,8 @@
     <p class="text-center">Selamat datang di dashboard editor. Anda dapat mengelola resep di sini.</p>
     <div class="text-center">
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRecipeModalEditor">Tambah Resep</button>
-        <button class="btn btn-secondary">Lihat Semua Resep</button>
+        <a href="{{ route('dashboard.editor.recipes.index') }}" class="btn btn-secondary">Lihat Semua Resep</a>
+
     </div>
 </div>
 @endsection

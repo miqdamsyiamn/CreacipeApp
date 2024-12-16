@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/editor.css') }}">
 </head>
+
 <body>
     <div class="topbar d-flex justify-content-between align-items-center">
         <span>SELAMAT DATANG EDITOR | DASHBOARD</span>
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" method="GET"
+            action="{{ Request::is('editor/recipes*') ? route('editor.recipes.search') : '#' }}">
+            <input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search" value="{{ request('keyword') }}">
             <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
+
     </div>
 
     <div class="d-flex">
@@ -35,10 +39,11 @@
         </div>
     </div>
 
+    {{-- @include('recipes.showeditor') --}}
     @include('dashboard.editor.recipes.create')
-    
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

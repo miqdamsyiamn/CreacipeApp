@@ -170,13 +170,14 @@ public function storeByEditor(Request $request)
     return redirect()->route('dashboard.editor.recipes.index')->with('success', 'Resep berhasil ditambahkan dan telah disetujui.');
 }
 
-// public function indexEditor()
-// {
-//     // Ambil semua resep dengan relasi pengguna yang membuatnya
-//     $recipes = Recipe::with('user')->latest()->paginate(6);
+public function showEditorRecipes()
+{
+    // Ambil semua resep tanpa memfilter status
+    $recipes = Recipe::with('user')->latest()->get();
 
-//     return view('dashboard.editor.recipes.index', compact('recipes'));
-// }
+    // Kirim data ke view
+    return view('recipes.showeditor', compact('recipes'));
+}
 
 
 

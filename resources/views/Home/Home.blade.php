@@ -42,9 +42,12 @@
 
 @section('content') <!-- Konten Utama -->
 <div class="container mt-5">
+    <!-- Menampilkan pesan hasil pencarian -->
+    @if(isset($message))
+    <div class="alert alert-info">{{ $message }}</div>
+    @endif
     <h2 class="text-center mb-4">Resep Pilihan</h2>
     <div class="row">
-        
         @forelse($approvedRecipes as $recipe) <!-- Variabel dari controller -->
             <div class="col-md-4 mb-4">
                 <div class="card">
@@ -66,11 +69,12 @@
                 </div>
             </div>
         @empty
-            <p class="text-center">Belum ada resep yang disetujui.</p>
+        <p class="text-center">Belum ada resep atau tidak ada hasil pencarian.</p>
         @endforelse
     </div>
 </div>
 @endsection
+
 
 @section('modal') <!-- Bagian Modal -->
     @include('recipes.show') <!-- Menyertakan modal resep -->
@@ -79,11 +83,11 @@
 @endsection
 
 @section('scripts') <!-- Bagian Script -->
-    @if(session('user_details'))
-        <script>
-            // Jika registrasi berhasil, tampilkan modal detail registrasi
-            var registrationDetailsModal = new bootstrap.Modal(document.getElementById('registrationDetailsModal'));
-            registrationDetailsModal.show();
-        </script>
-    @endif
+@if(session('user_details'))
+<script>
+    // Jika registrasi berhasil, tampilkan modal detail registrasi
+    var registrationDetailsModal = new bootstrap.Modal(document.getElementById('registrationDetailsModal'));
+    registrationDetailsModal.show();
+</script>
+@endif
 @endsection

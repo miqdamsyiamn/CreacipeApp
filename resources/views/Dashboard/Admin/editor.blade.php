@@ -24,6 +24,11 @@
         </div>
     @endif
 
+    <!-- Notifikasi Hasil Pencarian -->
+    @if(isset($message))
+        <div class="alert alert-info">{{ $message }}</div>
+    @endif
+
     <!-- Tambah Editor -->
     <div class="card mb-4">
         <div class="card-body">
