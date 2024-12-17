@@ -1,4 +1,4 @@
-@extends('layout.editor') <!-- Layout khusus untuk editor -->
+@extends('layout.show') <!-- Layout khusus untuk editor -->
 
 @section('title', 'Semua Resep')
 
@@ -15,7 +15,7 @@
                         <h5 class="card-title">{{ $recipe->title }}</h5>
                         <p class="card-text text-truncate">{{ $recipe->description }}</p>
                         <p class="card-text"><strong>Oleh:</strong> {{ $recipe->user->name }}</p>
-                        <a href="{{ route('recipes.showeditor', $recipe->id) }}" class="btn btn-primary">Lihat Detail</a>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal{{ $recipe->id }}">Lihat Resep</button>
                     </div>
                 </div>
             </div>

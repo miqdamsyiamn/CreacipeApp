@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.profile')
 
 @section('title', 'Resepku')
 

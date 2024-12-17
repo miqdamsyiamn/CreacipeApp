@@ -112,4 +112,4 @@ Route::post('/dashboard/editor/recipes', [RecipesController::class, 'storeByEdit
 Route::get('/dashboard/editor/recipes/index', [EditorRecipesController::class, 'indexEditor'])->name('dashboard.editor.recipes.index');
 
 // Route untuk halaman semua resep editor
-Route::get('/recipes/showeditor', [RecipesController::class, 'showEditorRecipes'])->name('recipes.showeditor');
+Route::get('/recipes/showeditor/{id}', [EditorRecipesController::class, 'showEditorRecipe'])->name('recipes.showeditor');
