@@ -1,5 +1,4 @@
-<!-- resources/views/layout/recipe-modal.blade.php -->
-@foreach($approvedRecipes as $recipe)
+@foreach($recipes as $recipe)
     <div class="modal fade" id="recipeModal{{ $recipe->id }}" tabindex="-1" aria-labelledby="recipeModalLabel{{ $recipe->id }}" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">

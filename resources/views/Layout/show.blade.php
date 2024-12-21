@@ -39,9 +39,8 @@
         </div>
     </div>
 
-    {{-- @include('recipes.showeditor') --}}
-    @include('dashboard.editor.recipes.create')
-    {{-- @include('recipes.showeditor') --}}
+    {{-- @include('dashboard.editor.recipes.create') --}}
+    @include('recipes.showeditor')
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

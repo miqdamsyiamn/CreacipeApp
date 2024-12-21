@@ -49,22 +49,25 @@
     <h2 class="text-center mb-4">Resep Pilihan</h2>
     <div class="row">
         @forelse($approvedRecipes as $recipe) <!-- Variabel dari controller -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="{{ asset($recipe->image ?? 'https://via.placeholder.com/300x200') }}"
-                    class="card-img-top" alt="{{ $recipe->title }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $recipe->title }}</h5>
-                    <p class="card-text text-truncate">{{ $recipe->description }}</p>
-                    <p class="card-text"><strong>Diposting oleh:</strong> {{ $recipe->user->name }}</p>
-                    @auth
-                    <a href="{{ route('recipes.show', $recipe->id) }}" class="btn btn-primary">Lihat Resep</a>
-                    @else
-                    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">Lihat Resep</button>
-                    @endauth
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset($recipe->image ?? 'https://via.placeholder.com/300x200') }}" 
+                        class="card-img-top" alt="{{ $recipe->title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $recipe->title }}</h5>
+                        <p class="card-text text-truncate">{{ $recipe->description }}</p>
+                        <!-- Menampilkan nama pembuat -->
+                        <p class="card-text"><strong>Diposting oleh:</strong> {{ $recipe->user->name }}</p>
+                        @auth
+                            <!-- Tampilkan tombol untuk membuka modal resep -->
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal{{ $recipe->id }}">Lihat Resep</button>
+                        @else
+                            <!-- Tampilkan tombol untuk membuka modal login jika belum login -->
+                            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">Login untuk Lihat Resep</button>
+                        @endauth
+                    </div>
                 </div>
             </div>
-        </div>
         @empty
         <p class="text-center">Belum ada resep atau tidak ada hasil pencarian.</p>
         @endforelse
@@ -74,8 +77,9 @@
 
 
 @section('modal') <!-- Bagian Modal -->
-@include('layout.login') <!-- Memanggil modal login -->
-@include('layout.register') <!-- Memanggil modal register -->
+    @include('recipes.show') <!-- Menyertakan modal resep -->
+    @include('layout.login') <!-- Memanggil modal login -->
+    @include('layout.register') <!-- Memanggil modal register -->
 @endsection
 
 @section('scripts') <!-- Bagian Script -->
