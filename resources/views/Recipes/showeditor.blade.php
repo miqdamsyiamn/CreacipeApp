@@ -1,34 +1,55 @@
 @foreach($recipes as $recipe)
-    <div class="modal fade" id="recipeModal{{ $recipe->id }}" tabindex="-1" aria-labelledby="recipeModalLabel{{ $recipe->id }}" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="recipeModalLabel{{ $recipe->id }}">{{ $recipe->title }}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center mb-4">
-                        <img src="{{ asset($recipe->image ?? 'https://via.placeholder.com/600x400') }}" 
-                            class="img-fluid rounded" alt="{{ $recipe->title }}">
+<div class="modal fade" id="recipeModal{{ $recipe->id }}" tabindex="-1" aria-labelledby="recipeModalLabel{{ $recipe->id }}" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="recipeModalLabel{{ $recipe->id }}">{{ $recipe->title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Body -->
+            <div class="modal-body">
+                <div class="row">
+                    <!-- Bagian Gambar Resep -->
+                    <div class="col-md-5">
+                        <img src="{{ asset($recipe->image ?? 'https://via.placeholder.com/600x400') }}"
+                            class="img-fluid rounded" alt="{{ $recipe->title }}"
+                            style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <h4>Deskripsi</h4>
-                    <p>{{ $recipe->description ?? 'Tidak ada deskripsi.' }}</p>
-
-                    <h4>Bahan-bahan</h4>
-                    <ul>
-                        @foreach(json_decode($recipe->ingredients) as $ingredient)
+                    <!-- Bagian Informasi Resep -->
+                    <div class="col-md-7">
+                        <h4>Deskripsi</h4>
+                        <p>{{ $recipe->description ?? 'Tidak ada deskripsi.' }}</p>
+                        <h4>Bahan-bahan</h4>
+                        <ul class="step-list">
+                            @if($recipe->ingredients)
+                            @foreach(json_decode($recipe->ingredients) as $ingredient)
                             <li>{{ $ingredient }}</li>
-                        @endforeach
-                    </ul>
-
-                    <h4>Langkah-langkah</h4>
-                    <ol>
-                        @foreach(json_decode($recipe->steps) as $step)
+                            @endforeach
+                            @else
+                            <li>Tidak ada bahan yang ditambahkan.</li>
+                            @endif
+                        </ul>
+                        <h4>Langkah-langkah</h4>
+                        <ol class="step-list">
+                            @if($recipe->steps)
+                            @foreach(json_decode($recipe->steps) as $step)
                             <li>{{ $step }}</li>
-                        @endforeach
-                    </ol>
+                            @endforeach
+                            @else
+                            <li>Tidak ada langkah yang ditambahkan.</li>
+                            @endif
+                        </ol>
+                        <!-- Tombol Edit -->
+                        <div class="mt-3">
+                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editRecipeModal{{ $recipe->id }}">
+                                <i class="bi bi-pencil"></i> Edit
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endforeach

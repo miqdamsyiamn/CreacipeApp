@@ -47,11 +47,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Kolom Pencarian -->
-                <form class="d-flex ms-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Cari resep" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Cari</button>
-                </form>
                 <ul class="navbar-nav ms-auto">
                     @auth
                     <li class="nav-item dropdown">
@@ -122,6 +117,9 @@
             <p>&copy; 2024 Creacipe. Semua Hak Dilindungi.</p>
         </div>
     </footer>
+
+    <!-- Script untuk Dynamic Field -->
+<script src="{{ asset('assets/js/edit.js') }}"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

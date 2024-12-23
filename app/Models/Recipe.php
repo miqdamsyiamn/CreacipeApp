@@ -18,6 +18,10 @@ class Recipe extends Model
         'image',
         'user_id',
         'status_id',
+        'accepted_date',
+        'declined_date',
+        'decline_reason',
+        'category',
     ];
 
     // Relasi ke tabel users

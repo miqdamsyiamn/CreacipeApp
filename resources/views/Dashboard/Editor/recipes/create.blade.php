@@ -115,42 +115,54 @@
                     </div>
                     <!-- Deskripsi -->
                     <div class="mb-4">
-                        <label for="description" class="form-label"><i class="bi bi-info-circle"></i> Deskripsi (Opsional)</label>
-                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Berikan deskripsi singkat atau cerita di balik resep ini..."></textarea>
+                        <label for="description" class="form-label"><i class="bi bi-info-circle"></i> Deskripsi</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Berikan deskripsi singkat atau cerita di balik resep ini..." required></textarea>
                     </div>
-                    <!-- Bahan -->
-                    <div class="mb-4">
-                        <label for="ingredients" class="form-label"><i class="bi bi-basket"></i> Bahan-bahan</label>
-                        <textarea class="form-control" id="ingredients" name="ingredients" rows="5" placeholder="Pisahkan setiap bahan dengan enter" required></textarea>
-                        <small class="form-text">Pisahkan setiap bahan dengan menekan enter.</small>
+                    <!-- Dynamic Ingredients -->
+                    <h5>Bahan-bahan</h5>
+                    <div id="ingredients-container">
+                        <div class="input-group mb-2">
+                            <input type="text" name="ingredients[]" class="form-control" placeholder="Contoh: 1/2 ekor ayam" required>
+                            <button type="button" class="btn btn-danger remove-ingredient">Hapus</button>
+                        </div>
                     </div>
-                    <!-- Langkah -->
-                    <div class="mb-4">
-                        <label for="steps" class="form-label"><i class="bi bi-list-check"></i> Langkah-langkah</label>
-                        <textarea class="form-control" id="steps" name="steps" rows="5" placeholder="Pisahkan setiap langkah dengan enter" required></textarea>
-                        <small class="form-text">Pisahkan setiap langkah dengan menekan enter.</small>
+                    <button type="button" class="btn btn-secondary mb-3" id="add-ingredient">+ Bahan</button>
+
+                    <!-- Dynamic Steps -->
+                    <h5>Langkah-langkah</h5>
+                    <div id="steps-container">
+                        <div class="input-group mb-2">
+                            <input type="text" name="steps[]" class="form-control" placeholder="Contoh: Tumis bumbu hingga harum" required>
+                            <button type="button" class="btn btn-danger remove-step">Hapus</button>
+                        </div>
                     </div>
+                    <button type="button" class="btn btn-secondary mb-3" id="add-step">+ Langkah</button>
                     <!-- Foto -->
                     <div class="mb-4">
-                        <label for="image" class="form-label"><i class="bi bi-image"></i> Foto Resep (Opsional)</label>
-                        <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                        <label for="image" class="form-label"><i class="bi bi-image"></i> Foto Resep</label>
+                        <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
                     </div>
                     <!-- Status Resep -->
                     <div class="mb-4">
                         <label for="status" class="form-label"><i class="bi bi-check-circle"></i> Status Resep</label>
                         <select class="form-control" id="status" name="status" required>
-                            <option value="pending">Pending</option>
-                            <option value="approved">Disetujui</option>
-                            <option value="rejected">Ditolak</option>
+                            <option value="1">Pending</option>
+                            <option value="2">Disetujui</option>
+                            <option value="3">Ditolak</option>
                         </select>
                         <small class="form-text">Pilih status resep.</small>
                     </div>
-                    <!-- Komentar Editor -->
+                    <!-- Kategori -->
                     <div class="mb-4">
-                        <label for="editor_comment" class="form-label"><i class="bi bi-pencil"></i> Komentar Editor</label>
-                        <textarea class="form-control" id="editor_comment" name="editor_comment" rows="3" placeholder="Tulis komentar atau catatan tambahan untuk resep ini..."></textarea>
+                        <label for="category" class="form-label"><i class="bi bi-tags"></i> Kategori</label>
+                        <select name="category" id="category" class="form-select" required>
+                            <option value="">Pilih Kategori</option>
+                            <option value="Masakan Indonesia">Masakan Indonesia</option>
+                            <option value="Masakan Luar Negeri">Masakan Luar Negeri</option>
+                        </select>
                     </div>
                 </div>
+
                 <!-- Footer -->
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-custom"><i class="bi bi-cloud-upload"></i> Terbitkan Resep</button>
@@ -159,3 +171,5 @@
         </div>
     </div>
 </div>
+<!-- Script untuk Dynamic Field -->
+<script src="{{ asset('assets/js/dynamic-fields.js') }}"></script>

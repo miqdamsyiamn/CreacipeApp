@@ -45,3 +45,49 @@ body {
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
+
+.card img {
+    width: 100%; /* Mengatur lebar gambar mengikuti card */
+    height: 200px; /* Tinggi gambar seragam */
+    object-fit: contain; /* Menampilkan gambar sepenuhnya tanpa terpotong */
+    background-color: #f8f9fa; /* Memberikan latar belakang abu-abu terang untuk gambar kecil */
+    border-radius: 8px; /* Membuat sudut sedikit melengkung */
+    padding: 5px; /* Memberikan sedikit jarak di sekeliling gambar */
+}
+
+.modal-body .col-md-7 {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.step-list {
+    counter-reset: step-counter;
+    padding-left: 0; /* Menghilangkan padding bawaan */
+}
+
+.step-list li {
+    list-style: none;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Ukuran teks langkah */
+}
+
+.step-list li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    width: 20px; /* Lebar lingkaran */
+    height: 20px; /* Tinggi lingkaran */
+    border-radius: 50%;
+    background-color: #343a40; /* Warna lingkaran */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 12px; /* Ukuran angka di dalam lingkaran */
+    font-weight: bold;
+}
+
+
+

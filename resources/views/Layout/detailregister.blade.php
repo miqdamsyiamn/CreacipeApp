@@ -5,6 +5,7 @@
         <div class="modal-content">
             <div class="modal-body text-center">
                 <h3 class="mb-4">Registrasi Berhasil</h3>
+                <p>Detail Akun sudah terkirim di Email!</p>
                 <p><strong>Nama:</strong> {{ session('user_details.name') }}</p>
                 <p><strong>Email:</strong> {{ session('user_details.email') }}</p>
                 <p>Silakan tekan tombol <strong>OK</strong> untuk masuk ke halaman login.</p>

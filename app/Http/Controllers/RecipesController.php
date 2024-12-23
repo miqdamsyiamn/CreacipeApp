@@ -9,56 +9,67 @@ use Illuminate\Support\Facades\Log;
 
 class RecipesController extends Controller
 {
+    //menampilkan resep ke menu resepku
+    public function index()
+    {
+        $recipes = Recipe::with('user')->where('user_id', auth()->id())->paginate(6);
+        // Cek apakah ada resep dengan status Declined dan alasan
+        foreach ($recipes as $recipe) {
+            if ($recipe->status_id == 3 && $recipe->decline_reason) {
+                // Simpan pesan decline ke dalam flash session
+                session()->flash('decline_message', 'Resep "' . $recipe->title . '" ditolak dengan alasan: ' . $recipe->decline_reason);
+            }
+        }
+        return view('member.recipes.index', compact('recipes'));
+    }
+
     // Menampilkan form tambah resep
     public function create()
     {
         return view('member.recipes.create');
     }
 
-    // Menyimpan data resep
+    // Menyimpan data resep oleh member
     public function store(Request $request)
     {
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'ingredients' => 'required',
-            'steps' => 'required',
+            'ingredients' => 'required|array', // Dynamic Field untuk bahan
+            'ingredients.*' => 'required|string|max:255',
+            'steps' => 'required|array', // Dynamic Field untuk langkah
+            'steps.*' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'category' => 'required|string',
         ]);
-    
+
         Log::info('Validated data:', $validatedData);
-    
+
         // Cek apakah file image tersedia
         if ($request->hasFile('image')) {
             $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('assets/upload'), $imageName);
             $validatedData['image'] = 'assets/upload/' . $imageName;
         }
-    
+
         Log::info('Data before save:', $validatedData);
-    
+
         // Simpan resep
         Recipe::create([
             'title' => $validatedData['title'],
             'description' => $validatedData['description'] ?? null,
-            'ingredients' => json_encode(explode("\n", $validatedData['ingredients'])),
-            'steps' => json_encode(explode("\n", $validatedData['steps'])),
+            'ingredients' => json_encode($validatedData['ingredients']), // Langsung encode array
+            'steps' => json_encode($validatedData['steps']), // Langsung encode array
             'image' => $validatedData['image'] ?? null,
             'user_id' => auth()->id(),
-            'status_id' => 1, // Status 'Pending'
+            'status_id' => 1,
+            'category' => $validatedData['category'],
         ]);
-    
+
         return redirect()->route('member.recipes.index')->with('success', 'Resep berhasil ditambahkan dan menunggu persetujuan.');
     }
 
-    //menampilkan resep ke menu resepku
-    public function index() 
-    {
-        $recipes = Recipe::with('user')->where('user_id', auth()->id())->paginate(6);
-        return view('member.recipes.index', compact('recipes'));
-    }
-
-    public function edit($id) 
+    public function edit($id)
     {
         $recipe = Recipe::findOrFail($id);
         // Cek apakah resep milik user yang sedang login
@@ -68,10 +79,10 @@ class RecipesController extends Controller
         return view('member.recipes.edit', compact('recipe'));
     }
 
+    //update oleh member
     public function update(Request $request, $id)
     {
         $recipe = Recipe::findOrFail($id);
-
         // Cek apakah resep milik user yang sedang login
         if ($recipe->user_id !== auth()->id()) {
             abort(403, 'Unauthorized action.');
@@ -80,9 +91,12 @@ class RecipesController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'ingredients' => 'required|string',
-            'steps' => 'required|string',
+            'ingredients' => 'required|array', // Dynamic Field untuk bahan
+            'ingredients.*' => 'required|string|max:255',
+            'steps' => 'required|array', // Dynamic Field untuk langkah
+            'steps.*' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'category' => 'required|string',
         ]);
 
         // Update gambar jika ada
@@ -90,7 +104,7 @@ class RecipesController extends Controller
             $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('assets/upload'), $imageName);
             $validatedData['image'] = 'assets/upload/' . $imageName;
-    
+
             // Hapus gambar lama jika ada
             if ($recipe->image && file_exists(public_path($recipe->image))) {
                 unlink(public_path($recipe->image));
@@ -101,88 +115,101 @@ class RecipesController extends Controller
         $recipe->update([
             'title' => $validatedData['title'],
             'description' => $validatedData['description'],
-            'ingredients' => json_encode(explode("\n", $validatedData['ingredients'])),
-            'steps' => json_encode(explode("\n", $validatedData['steps'])),
+            'ingredients' => json_encode($validatedData['ingredients']), // Langsung encode array
+            'steps' => json_encode($validatedData['steps']), // Langsung encode array
             'image' => $validatedData['image'] ?? $recipe->image,
+            'category' => $validatedData['category'],
         ]);
 
         return redirect()->route('member.recipes.index')->with('success', 'Resep berhasil diperbarui.');
     }
 
-    public function home()
-{
-    $approvedRecipes = Recipe::where('status_id', 2)->latest()->get(); // Ambil resep dengan status_id = 2
-    return view('home.home', compact('approvedRecipes')); // Kirim ke view
-}
-
-public function show($id)
-{
-    // Ambil data resep berdasarkan ID
-    $recipe = Recipe::findOrFail($id);
-
-
-    $approvedRecipes = Recipe::where('status_id', 2)->latest()->get();
-
-
-    // Kirim data resep ke view
-    return view('recipes.show', compact('recipe'));
-}
-
-// Membuat resep oleh editor
-public function createByEditor()
-{
-    return view('dashboard.editor.recipes.create'); // View khusus editor
-}
-
-// Menyimpan resep yang dibuat oleh editor
-public function storeByEditor(Request $request)
-{
-    $validatedData = $request->validate([
-        'title' => 'required|string|max:255',
-        'description' => 'nullable|string',
-        'ingredients' => 'required',
-        'steps' => 'required',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-    ]);
-
-    Log::info('Validated data (Editor):', $validatedData);
-
-    // Cek apakah file image tersedia
-    if ($request->hasFile('image')) {
-        $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
-        $request->file('image')->move(public_path('assets/upload'), $imageName);
-        $validatedData['image'] = 'assets/upload/' . $imageName;
+    //mengirimkan resep yg di approve ke home
+    public function home(Request $request)
+    {
+        // Mengambil parameter kategori dari URL
+        $category = $request->query('category');
+        // Filter resep berdasarkan kategori (jika ada)
+        $query = Recipe::where('status_id', 2); // Status Approved
+        if ($category) {
+            // Cocokkan dengan kategori yang tersimpan di database
+            if ($category === 'Indonesia') {
+                $query->where('category', 'Masakan Indonesia');
+            } elseif ($category === 'Luar Negeri') {
+                $query->where('category', 'Masakan Luar Negeri');
+            }
+        }
+        // Tambahkan paginasi dengan 6 resep per halaman
+        $approvedRecipes = $query->latest()->paginate(6);
+        return view('home.home', compact('approvedRecipes')); // Kirim ke view
     }
 
-    Log::info('Data before save (Editor):', $validatedData);
 
-    // Simpan resep
-    Recipe::create([
-        'title' => $validatedData['title'],
-        'description' => $validatedData['description'] ?? null,
-        'ingredients' => json_encode(explode("\n", $validatedData['ingredients'])),
-        'steps' => json_encode(explode("\n", $validatedData['steps'])),
-        'image' => $validatedData['image'] ?? null,
-        'user_id' => auth()->id(),
-        'status_id' => 2, // Status 'Approved' langsung, karena editor membuatnya
-    ]);
+    //lihat resep di home
+    public function show($id)
+    {
+        // Ambil data resep berdasarkan ID
+        $recipe = Recipe::with('user')->findOrFail($id);
 
-    return redirect()->route('dashboard.editor.recipes.index')->with('success', 'Resep berhasil ditambahkan dan telah disetujui.');
-}
-
-public function showEditorRecipes()
-{
-    // Ambil semua resep tanpa memfilter status
-    $recipes = Recipe::with('user')->latest()->get();
-
-    // Kirim data ke view
-    return view('recipes.showeditor', compact('recipes'));
-}
+        // Kirim data ke view
+        return view('recipes.show', compact('recipe'));
+    }
 
 
+    // Membuat resep oleh editor
+    public function createByEditor()
+    {
+        return view('dashboard.editor.recipes.create'); // View khusus editor
+    }
 
+    // Menyimpan resep yang dibuat oleh editor
+    public function storeByEditor(Request $request)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'ingredients' => 'required|array', // Dynamic Field untuk bahan
+            'ingredients.*' => 'required|string|max:255',
+            'steps' => 'required|array', // Dynamic Field untuk langkah
+            'steps.*' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'category' => 'required|string', // Tambahkan kategori
+            'status' => 'required' // Validasi status (Pending, Approved, Declined)
+        ]);
 
+        Log::info('Validated data (Editor):', $validatedData);
 
+        // Cek apakah file image tersedia
+        if ($request->hasFile('image')) {
+            $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('assets/upload'), $imageName);
+            $validatedData['image'] = 'assets/upload/' . $imageName;
+        }
 
+        Log::info('Data before save (Editor):', $validatedData);
 
+        // Simpan resep
+        Recipe::create([
+            'title' => $validatedData['title'],
+            'description' => $validatedData['description'] ?? null,
+            'ingredients' => json_encode($validatedData['ingredients']), // Langsung encode array
+            'steps' => json_encode($validatedData['steps']), 
+            'image' => $validatedData['image'] ?? null,
+            'category' => $validatedData['category'],
+            'user_id' => auth()->id(),
+            'status_id' => $request->status,
+        ]);
+
+        return redirect()->route('dashboard.editor.recipes.index')->with('success', 'Resep berhasil ditambahkan.');
+    }
+
+    //menampilkan resep yang dibuat editor 
+    public function showEditorRecipes()
+    {
+        // Ambil semua resep tanpa memfilter status
+        $recipes = Recipe::with('user')->latest()->get();
+
+        // Kirim data ke view
+        return view('recipes.showeditor', compact('recipes'));
+    }
 }

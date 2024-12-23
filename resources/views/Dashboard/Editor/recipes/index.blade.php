@@ -1,10 +1,17 @@
-@extends('layout.show') <!-- Layout khusus untuk editor -->
+@extends('layout.editor') <!-- Layout khusus untuk editor -->
 
 @section('title', 'Semua Resep')
 
 @section('content')
 <div class="container mt-4">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRecipeModalEditor">Tambah Resep</button>
     <h2 class="text-center mb-4">Semua Resep</h2>
+    <!-- Notifikasi -->
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
     <div class="row">
         @forelse($recipes as $recipe)
             <div class="col-md-4 mb-4">
@@ -19,12 +26,15 @@
                     </div>
                 </div>
             </div>
+            <!-- Modal untuk Edit Resep -->
+            @include('dashboard.editor.recipes.edit', ['recipe' => $recipe])
         @empty
             <p class="text-center">Tidak ada resep yang tersedia.</p>
         @endforelse
     </div>
-    <div class="d-flex justify-content-center">
-        {{ $recipes->links() }} <!-- Pagination -->
+    <!-- paginasi -->
+    <div class="d-flex justify-content-center mt-4">
+        {{ $recipes->links('pagination::simple-bootstrap-4') }}
     </div>
 </div>
 @endsection

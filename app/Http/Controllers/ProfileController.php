@@ -6,15 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
+use App\Mail\PasswordUpdatedMail;
+use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
     // Menampilkan halaman profil user
     public function showProfile()
-{
-    $user = auth()->user(); // Ambil data pengguna yang sedang login
-    return view('profile.showprofile', compact('user')); // Pastikan path view benar
-}
+    {
+        $user = auth()->user(); // Ambil data pengguna yang sedang login
+        return view('profile.showprofile', compact('user')); // Pastikan path view benar
+    }
 
 
     // Menampilkan form edit profil
@@ -56,5 +59,36 @@ class ProfileController extends Controller
 
         // Redirect dengan pesan sukses
         return redirect()->route('profile.showprofile')->with('success', 'Profil berhasil diperbarui.');
+    }
+
+    // Tampilkan Form Ubah Password
+    public function changePassword()
+    {
+        return view('profile.changepassword');
+    }
+
+    // Proses Ubah Password
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', 'current_password'],
+            'password' => ['required', 'min:8', 'confirmed'],
+        ]);
+
+        // Periksa password lama
+    if (!Hash::check($request->current_password, auth()->user()->password)) {
+        return back()->withErrors(['current_password' => 'Password lama tidak sesuai']);
+    }
+
+        // Update password
+        $user = Auth::user();
+        $user->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        // Kirim email dengan detail akun baru
+    Mail::to($user->email)->send(new PasswordUpdatedMail($user, $request->password));
+
+        return redirect()->route('profile.showprofile')->with('success', 'Password berhasil diperbarui.');
     }
 }

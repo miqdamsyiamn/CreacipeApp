@@ -20,7 +20,7 @@ class User extends Authenticatable
 
     public function status()
     {
-        return $this->belongsTo(Status::class, 'status_id');
+        return $this->belongsTo(Status::class, 'status_id', 'status_id');
     }
 
     /**

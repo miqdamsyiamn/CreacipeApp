@@ -31,10 +31,14 @@
             text-align: center;
         }
     </style>
+    <!-- Tambahkan Script reCAPTCHA -->
+    {!! NoCaptcha::renderJs() !!}
+
     @yield('styles') <!-- Untuk tambahan CSS -->
 </head>
 
 <body>
+    <!-- Flash Error Global (Tidak Digunakan Lagi untuk Login/Register) -->
     @if(session('error'))
     <div class="alert alert-danger">
         {{ session('error') }}
@@ -51,14 +55,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <!-- Kolom Pencarian -->
-                <form class="d-flex ms-3" role="search"
-                    action="{{ Request::is('member/recipes*') ? route('member.recipes.search') : route('home.search') }}"
-                    method="GET">
-                    <input class="form-control me-2" type="search" name="keyword"
-                        placeholder="{{ Request::is('member/recipes*') ? 'Cari di koleksi resepmu' : 'Cari resep' }}"
+                @if(!Request::is('member/recipes*'))
+                <form class="d-flex ms-3" role="search" action="{{ route('home.search') }}" method="GET">
+                    <input class="form-control me-2" type="search" name="keyword" placeholder="Cari resep"
                         aria-label="Search" value="{{ request('keyword') }}">
                     <button class="btn btn-outline-success" type="submit">Cari</button>
                 </form>
+                @endif
+
                 <ul class="navbar-nav ms-auto">
                     @auth
                     <li class="nav-item dropdown">
@@ -128,6 +132,23 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Modal untuk Login -->
+    @if(session('showLoginModal'))
+    <script>
+        var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+        loginModal.show();
+    </script>
+    @endif
+
+    <!-- Script untuk Modal Register -->
+    @if(session('showRegisterModal'))
+    <script>
+        var registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+        registerModal.show();
+    </script>
+    @endif
+
     @yield('scripts') <!-- Untuk tambahan JS -->
 </body>
 

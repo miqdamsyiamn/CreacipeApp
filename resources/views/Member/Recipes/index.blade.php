@@ -4,10 +4,33 @@
 
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Resepmu</h1>
+    <!-- Notifikasi Pesan Decline -->
+    @if (session('decline_message'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('decline_message') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    <!-- Pesan Pencarian -->
+    @if(isset($message))
+    <div class="alert alert-info text-center">{{ $message }}</div>
+    @endif
+
+
+    <h1 class="text-center mb-4">Resepku</h1>
     <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
-            <button class="btn btn-secondary">Terakhir Dilihat</button>
+            <!-- Tombol untuk menampilkan semua resep tanpa filter -->
+            <a href="{{ route('member.recipes.index') }}" class="btn btn-secondary">Semua Resep</a>
+        </div>
+
+        <!-- Tombol Search Baru -->
+        <div>
+            <form class="d-flex" role="search" action="{{ route('member.recipes.search') }}" method="GET">
+                <input class="form-control me-2" type="search" name="keyword" placeholder="Cari di koleksi resepmu"
+                    aria-label="Search" value="{{ request('keyword') }}">
+                <button class="btn btn-primary" type="submit">Cari</button>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -68,9 +91,9 @@
         </div>
         @endforelse
     </div>
-    <!-- Pagination -->
+    <!-- Paginasi -->
     <div class="d-flex justify-content-center mt-4">
-        {{ $recipes->links() }}
+        {{ $recipes->links('pagination::simple-bootstrap-4') }}
     </div>
 </div>
 @endsection

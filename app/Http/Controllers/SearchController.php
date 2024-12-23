@@ -8,6 +8,7 @@ use App\Models\User;
 
 class SearchController extends Controller
 {
+    //search di home
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
@@ -31,6 +32,7 @@ class SearchController extends Controller
         ]);
     }
 
+    //search resep ku
     public function searchUserRecipes(Request $request)
     {
         $keyword = $request->input('keyword');
@@ -68,6 +70,7 @@ class SearchController extends Controller
         ]);
     }
 
+    //search member
     public function searchMembers(Request $request)
     {
         $keyword = $request->input('keyword');
@@ -87,6 +90,7 @@ class SearchController extends Controller
         ]);
     }
 
+    //search yang di lakukan editor di menu kelola resep
     public function searchEditorRecipes(Request $request)
     {
         $keyword = $request->input('keyword');
@@ -101,6 +105,41 @@ class SearchController extends Controller
 
         // Kembalikan hasil pencarian ke halaman kelola resep
         return view('dashboard.editor.recipes', [
+            'recipes' => $recipes,
+            'message' => "Hasil pencarian untuk: \"$keyword\""
+        ]);
+    }
+
+    //search resep pada semua resep oleh editor
+    public function searchAllRecipes(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        // Periksa apakah pengguna berada di halaman 'Kelola Resep'
+        $isManageRecipes = $request->is('dashboard/editor/recipes/manage*');
+
+        // Query untuk resep berdasarkan kondisi halaman
+        $recipes = Recipe::with('user', 'status')
+            ->where(function ($query) use ($keyword) {
+                $query->where('title', 'like', "%$keyword%")
+                    ->orWhere('description', 'like', "%$keyword%")
+                    ->orWhere('ingredients', 'like', "%$keyword%")
+                    ->orWhereHas('user', function ($subQuery) use ($keyword) {
+                        $subQuery->where('name', 'like', "%$keyword%");
+                    });
+            });
+
+        // Jika di halaman 'Kelola Resep', tambahkan filter status
+        if ($isManageRecipes) {
+            $recipes->where('status_id', 1);
+        }
+
+        $recipes = $recipes->paginate(10);
+
+        // Kirim data ke view yang sesuai
+        $view = $isManageRecipes ? 'dashboard.editor.manage' : 'dashboard.editor.recipes.index';
+
+        return view($view, [
             'recipes' => $recipes,
             'message' => "Hasil pencarian untuk: \"$keyword\""
         ]);

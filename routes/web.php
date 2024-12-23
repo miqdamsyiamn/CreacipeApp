@@ -8,7 +8,6 @@ use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\EditorRecipesController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,24 +57,33 @@ Route::delete('/admin/members/{id}', [AdminController::class, 'deleteMember'])->
 //search member di admin
 Route::get('/admin/members/search', [SearchController::class, 'searchMembers'])->name('admin.members.search');
 
-
 //login editor
-Route::get('/editor/dashboard', function () {
-    return view('dashboard.editor.editor');
-})->middleware(['auth', 'editor'])->name('editor.dashboard');
-
+Route::get('/editor/dashboard', [EditorController::class, 'dashboard'])->middleware(['auth', 'editor'])->name('editor.dashboard');
 //mengelola resep oleh editor
 Route::get('/editor/recipes', [EditorController::class, 'index'])->name('editor.recipes.index');
 Route::patch('/editor/recipes/{id}/approve', [EditorController::class, 'approve'])->name('editor.recipes.approve');
 Route::patch('/editor/recipes/{id}/decline', [EditorController::class, 'decline'])->name('editor.recipes.decline');
 Route::delete('/editor/recipes/{id}', [EditorController::class, 'delete'])->name('editor.recipes.delete');
-//search resep oleh editor
+// Route untuk menyimpan perubahan resep
+Route::put('/dashboard/editor/recipes/{id}', [EditorRecipesController::class, 'update'])->name('editor.recipes.update');
+// untuk menambah resep dibagian editor
+Route::get('/dashboard/editor/recipes/create', [RecipesController::class, 'createByEditor'])->name('editor.recipes.create');
+// Rute untuk menyimpan resep yg dibuat editor
+Route::post('/dashboard/editor/recipes', [RecipesController::class, 'storeByEditor'])->name('editor.recipes.store');
+// menampilkan semua resep di halaman editor
+Route::get('/dashboard/editor/recipes/index', [EditorRecipesController::class, 'indexEditor'])->name('dashboard.editor.recipes.index');
+// Route untuk lihat resep di halaman editor
+Route::get('/recipes/showeditor/{id}', [EditorRecipesController::class, 'showEditorRecipe'])->name('recipes.showeditor');
+//search resep oleh editor di menu kelola resep.
 Route::get('/editor/recipes/search', [SearchController::class, 'searchEditorRecipes'])->name('editor.recipes.search');
+//search resep di menu semua resep oleh editor
+// Route untuk semua pencarian di editor
+Route::get('/dashboard/editor/recipes/search', [SearchController::class, 'searchAllRecipes'])->name('editor.searchAllRecipes');
+
 
 
 //untuk registrasi member
 Route::post('/register', [LoginController::class, 'register'])->name('register.post');
-
 // Route untuk menampilkan form tambah resep
 Route::get('/member/recipes/create', [RecipesController::class, 'create'])->name('member.recipes.create');
 // Route untuk menyimpan resep
@@ -87,29 +95,16 @@ Route::get('/member/recipes/{id}/edit', [RecipesController::class, 'edit'])->nam
 // Update resep
 Route::put('/member/recipes/{id}', [RecipesController::class, 'update'])->name('member.recipes.update');
 //menampilkan resep yang sudah di approve editor ke home
-// Route::get('/home', [RecipesController::class, 'showApprovedRecipes'])->name('home');
 Route::get('/', [RecipesController::class, 'home'])->name('home');
+//route ketika klik lihat resep di home
+Route::get('/recipes/{id}', action: [RecipesController::class, 'show'])->name('recipes.show');
 
-Route::get('/recipes/{id}', action: [RecipesController::class, 'show'])->name('recipes.show')->middleware('auth');
-
-
-
+//route untuk profil
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile.showprofile');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('/profile/password', [ProfileController::class, 'changePassword'])->name('password.change');
+Route::post('/profile/password', [ProfileController::class, 'updatePassword'])->name('password.update');
+
 });
-
-
-Route::get('/dashboard/editor/recipes/create', [RecipesController::class, 'createByEditor'])->name('editor.recipes.create');
-
-// Rute untuk menyimpan resep yang diajukan oleh anggota (Editor bisa memilih statusnya)
-Route::post('/dashboard/editor/recipes', [RecipesController::class, 'storeByEditor'])->name('editor.recipes.store');
-
-
-// Route::get('/dashboard/editor/recipes/index', action: [RecipesController::class, 'indexEditor'])->name('dashboard.editor.recipes.index');
-
-Route::get('/dashboard/editor/recipes/index', [EditorRecipesController::class, 'indexEditor'])->name('dashboard.editor.recipes.index');
-
-// Route untuk halaman semua resep editor
-Route::get('/recipes/showeditor/{id}', [EditorRecipesController::class, 'showEditorRecipe'])->name('recipes.showeditor');

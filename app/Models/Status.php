@@ -13,6 +13,6 @@ class Status extends Model
 
     public function users()
     {
-        return $this->hasMany(User::class, 'status_id');
+        return $this->hasMany(User::class, 'status_id', 'status_id');
     }
 }

@@ -4,17 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Mail\EditorAccountMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    // Kelola Editor
+    // menampilkan editor
     public function editors()
     {
         // Ambil semua user dengan role editor (role_id = 2)
-        $editors = User::where('role_id', 2)->with('status')->paginate(10);
+        $editors = User::where('role_id', 2)
+            ->with('status')
+            ->orderBy('created_at', 'desc') // Mengurutkan berdasarkan waktu pembuatan terbaru
+            ->paginate(10);
+
         return view('dashboard.admin.editor', compact('editors'));
     }
 
+    //menyimpan editor
     public function storeEditor(Request $request)
     {
         // Validasi input
@@ -25,16 +33,22 @@ class AdminController extends Controller
         ]);
 
         // Tambahkan editor baru
-        User::create([
+        $editor = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'role_id' => 2, // Role editor
-            'password' => bcrypt($request->password),
+            'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('admin.editors')->with('success', 'Editor berhasil ditambahkan.');
+        // Kirim email dengan detail akun editor
+        Mail::to($editor->email)->send(new EditorAccountMail($editor, $request->password));
+
+
+        // Redirect kembali ke halaman editor dengan notifikasi
+        return redirect()->route('admin.editors')->with('success', 'Editor berhasil ditambahkan dan detail akun dikirim ke email.');
     }
 
+    //menghapus editor
     public function deleteEditor($id)
     {
         // Hapus editor berdasarkan ID
@@ -43,6 +57,7 @@ class AdminController extends Controller
         return redirect()->route('admin.editors')->with('success', 'Editor berhasil dihapus.');
     }
 
+    //untuk nonaktif / aktif
     public function toggleStatus($id)
     {
         // Ambil user berdasarkan ID
@@ -59,13 +74,18 @@ class AdminController extends Controller
     public function members()
     {
         // Ambil semua user dengan role member (role_id = 3)
-        $members = User::where('role_id', 3)->with('status')->paginate(10);
+        $members = User::where('role_id', 3)
+            ->with('status')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
         return view('dashboard.admin.member', compact('members'));
     }
 
+    //delete member
     public function deleteMember($id)
     {
-        // Hapus editor berdasarkan ID
+        // Hapus member berdasarkan ID
         User::findOrFail($id)->delete();
         return redirect()->route('admin.members')->with('success', 'Member berhasil dihapus.');
     }

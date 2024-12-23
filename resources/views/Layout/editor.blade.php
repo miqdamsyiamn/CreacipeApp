@@ -12,14 +12,14 @@
 <body>
     <div class="topbar d-flex justify-content-between align-items-center">
         <span>SELAMAT DATANG EDITOR | DASHBOARD</span>
+        <!-- FORM SEARCH  -->
         <form class="d-flex" method="GET"
-            action="{{ Request::is('editor/recipes*') ? route('editor.recipes.search') : '#' }}">
-            <input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search" value="{{ request('keyword') }}">
+            action="{{ Request::is('dashboard/editor/recipes*') ? route('editor.searchAllRecipes') : route('editor.recipes.search') }}">
+            <input class="form-control me-2" type="search" name="keyword" placeholder="Search"
+                aria-label="Search" value="{{ request('keyword') }}">
             <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
-
     </div>
-
     <div class="d-flex">
         <div class="sidebar d-flex flex-column justify-content-between">
             <div>
@@ -33,18 +33,14 @@
                 </form>
             </div>
         </div>
-
         <div class="flex-grow-1 p-4">
             @yield('content')
         </div>
     </div>
-
-    {{-- @include('recipes.showeditor') --}}
+    @include('recipes.showeditor')
     @include('dashboard.editor.recipes.create')
-    {{-- @include('recipes.showeditor') --}}
-
-
+        <!-- Script untuk Dynamic Field -->
+<script src="{{ asset('assets/js/edit.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
