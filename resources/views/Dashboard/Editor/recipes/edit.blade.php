@@ -1,7 +1,7 @@
-<div class="modal fade" id="editRecipeModal{{ $recipe->id }}" tabindex="-1" aria-labelledby="editRecipeModalLabel" aria-hidden="true">
+<div class="modal fade" id="editRecipeModal{{ $recipe->recipe_id }}" tabindex="-1" aria-labelledby="editRecipeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form action="{{ route('editor.recipes.update', $recipe->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('editor.recipes.update', $recipe->recipe_id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <!-- Modal Header -->

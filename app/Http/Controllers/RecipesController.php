@@ -71,7 +71,7 @@ class RecipesController extends Controller
 
     public function edit($id)
     {
-        $recipe = Recipe::findOrFail($id);
+        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
         // Cek apakah resep milik user yang sedang login
         if ($recipe->user_id !== auth()->id()) {
             abort(403, 'Unauthorized action.');
@@ -82,7 +82,7 @@ class RecipesController extends Controller
     //update oleh member
     public function update(Request $request, $id)
     {
-        $recipe = Recipe::findOrFail($id);
+        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
         // Cek apakah resep milik user yang sedang login
         if ($recipe->user_id !== auth()->id()) {
             abort(403, 'Unauthorized action.');
@@ -149,7 +149,7 @@ class RecipesController extends Controller
     public function show($id)
     {
         // Ambil data resep berdasarkan ID
-        $recipe = Recipe::with('user')->findOrFail($id);
+        $recipe = Recipe::with('user')->where('recipe_id', $id)->firstOrFail();
 
         // Kirim data ke view
         return view('recipes.show', compact('recipe'));

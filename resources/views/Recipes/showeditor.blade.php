@@ -1,10 +1,10 @@
 @foreach($recipes as $recipe)
-<div class="modal fade" id="recipeModal{{ $recipe->id }}" tabindex="-1" aria-labelledby="recipeModalLabel{{ $recipe->id }}" aria-hidden="true">
+<div class="modal fade" id="recipeModal{{ $recipe->recipe_id }}" tabindex="-1" aria-labelledby="recipeModalLabel{{ $recipe->recipe_id }}" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <!-- Header -->
             <div class="modal-header">
-                <h5 class="modal-title" id="recipeModalLabel{{ $recipe->id }}">{{ $recipe->title }}</h5>
+                <h5 class="modal-title" id="recipeModalLabel{{ $recipe->recipe_id }}">{{ $recipe->title }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <!-- Body -->
@@ -42,7 +42,7 @@
                         </ol>
                         <!-- Tombol Edit -->
                         <div class="mt-3">
-                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editRecipeModal{{ $recipe->id }}">
+                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editRecipeModal{{ $recipe->recipe_id }}">
                                 <i class="bi bi-pencil"></i> Edit
                             </button>
                         </div>

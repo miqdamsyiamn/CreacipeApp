@@ -62,19 +62,19 @@
                         <!-- Aksi -->
                         <td>
                             <!-- Tombol Approve -->
-                            <form action="{{ route('editor.recipes.approve', $recipe->id) }}" method="POST" class="d-inline">
+                            <form action="{{ route('editor.recipes.approve', $recipe->recipe_id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-success btn-sm">Approve</button>
                             </form>
 
                             <!-- Tombol Decline dengan Modal -->
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#declineModal{{ $recipe->id }}">Decline</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#declineModal{{ $recipe->recipe_id }}">Decline</button>
 
                             <!-- Modal Decline -->
-                            <div class="modal fade" id="declineModal{{ $recipe->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="declineModal{{ $recipe->recipe_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
-                                    <form action="{{ route('editor.recipes.decline', $recipe->id) }}" method="POST">
+                                    <form action="{{ route('editor.recipes.decline', $recipe->recipe_id) }}" method="POST">
                                         @csrf
                                         @method('PATCH')
                                         <div class="modal-content">
@@ -94,7 +94,7 @@
                             </div>
 
                             <!-- Tombol Delete -->
-                            <form action="{{ route('editor.recipes.delete', $recipe->id) }}" method="POST" class="d-inline">
+                            <form action="{{ route('editor.recipes.delete', $recipe->recipe_id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-dark btn-sm mt-1">Delete</button>

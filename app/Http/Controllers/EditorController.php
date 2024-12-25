@@ -20,7 +20,8 @@ class EditorController extends Controller
     // Approve resep
     public function approve($id)
     {
-        $recipe = Recipe::findOrFail($id);
+        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
+
         // Update status dan tanggal approved
         $recipe->update([
             'status_recipes_id' => 2,
@@ -34,7 +35,8 @@ class EditorController extends Controller
     public function decline(Request $request, $id)
     {
         // Set status menjadi declined (ID status: 3)
-        $recipe = Recipe::findOrFail($id);
+        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
+
         // Update status, alasan, dan tanggal declined
         $recipe->update([
             'status_recipes_id' => 3, // Declined
@@ -48,7 +50,8 @@ class EditorController extends Controller
     // Hapus resep
     public function delete($id)
     {
-        $recipe = Recipe::findOrFail($id);
+        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
+
         $recipe->delete();
 
         return redirect()->back()->with('success', 'Resep berhasil dihapus.');

@@ -9,7 +9,7 @@
     <h1 class="text-center mb-4">Edit Resep</h1>
 
     <!-- Form Edit Resep -->
-    <form action="{{ route('member.recipes.update', $recipe->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('member.recipes.update', $recipe->recipe_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

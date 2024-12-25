@@ -20,7 +20,7 @@ class EditorRecipesController extends Controller
     public function showEditorRecipe($id)
     {
         // Ambil data resep berdasarkan ID
-        $recipe = Recipe::with('user')->findOrFail($id);
+        $recipe = Recipe::with('user')->where('recipe_id', $id)->firstOrFail();
 
         // Kirim data ke view modal
         return response()->json([
@@ -48,7 +48,7 @@ class EditorRecipesController extends Controller
         ]);
 
         // Ambil data resep berdasarkan ID
-        $recipe = Recipe::findOrFail($id);
+        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
 
         // Update data resep
         $recipe->title = $request->title;

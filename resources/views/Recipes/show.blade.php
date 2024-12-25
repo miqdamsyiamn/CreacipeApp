@@ -1,10 +1,10 @@
 <!-- resources/views/layout/recipe-modal.blade.php -->
 @foreach($approvedRecipes as $recipe)
-<div class="modal fade" id="recipeModal{{ $recipe->id }}" tabindex="-1" aria-labelledby="recipeModalLabel{{ $recipe->id }}" aria-hidden="true">
+<div class="modal fade" id="recipeModal{{ $recipe->recipe_id }}" tabindex="-1" aria-labelledby="recipeModalLabel{{ $recipe->recipe_id }}" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="recipeModalLabel{{ $recipe->id }}">{{ $recipe->title }}</h5>
+                <h5 class="modal-title" id="recipeModalLabel{{ $recipe->recipe_id }}">{{ $recipe->title }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

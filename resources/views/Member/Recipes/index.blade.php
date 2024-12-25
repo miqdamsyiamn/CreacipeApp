@@ -74,12 +74,12 @@
                     </div>
                     <p class="text-muted mt-2" style="font-size: 0.8rem;">Dibuat pada {{ \Carbon\Carbon::parse($recipe->created_at)->isoFormat('dddd, DD MMMM YYYY') }}</p>
                     <div class="dropdown position-absolute" style="bottom: 10px; right: 10px;">
-                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton{{ $recipe->id }}" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton{{ $recipe->recipe_id }}" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-three-dots"></i>
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ $recipe->id }}">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ $recipe->recipe_id }}">
                             <!-- Hanya opsi Edit -->
-                            <li><a class="dropdown-item" href="{{ route('member.recipes.edit', $recipe->id) }}">Edit Resep</a></li>
+                            <li><a class="dropdown-item" href="{{ route('member.recipes.edit', $recipe->recipe_id) }}">Edit Resep</a></li>
                         </ul>
                     </div>
                 </div>

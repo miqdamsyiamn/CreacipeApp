@@ -22,7 +22,7 @@
                         <h5 class="card-title">{{ $recipe->title }}</h5>
                         <p class="card-text text-truncate">{{ $recipe->description }}</p>
                         <p class="card-text"><strong>Oleh:</strong> {{ $recipe->user->name }}</p>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal{{ $recipe->id }}">Lihat Resep</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal{{ $recipe->recipe_id }}">Lihat Resep</button>
                     </div>
                 </div>
             </div>

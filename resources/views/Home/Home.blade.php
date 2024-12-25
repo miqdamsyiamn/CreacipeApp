@@ -75,7 +75,7 @@
                     <p class="card-text"><strong>Kategori:</strong> {{ $recipe->category }}</p>
 
                     <!-- Tombol Lihat Resep -->
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal{{ $recipe->id }}">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal{{ $recipe->recipe_id }}">
                         Lihat Resep
                     </button>
                 </div>
