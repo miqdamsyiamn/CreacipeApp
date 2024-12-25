@@ -81,7 +81,7 @@
                         </td>
                         <td>
                             <!-- Aktifkan/Nonaktifkan -->
-                            <form action="{{ route('admin.editors.toggle', $editor->id) }}" method="POST" class="d-inline">
+                            <form action="{{ route('admin.editors.toggle', $editor->user_id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-warning btn-sm">
@@ -90,7 +90,7 @@
                             </form>
 
                             <!-- Hapus Editor -->
-                            <form action="{{ route('admin.editors.delete', $editor->id) }}" method="POST" class="d-inline">
+                            <form action="{{ route('admin.editors.delete', $editor->user_id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
@@ -109,7 +109,7 @@
 
     <!-- Paginasi -->
     <div class="d-flex justify-content-center mt-4">
-        {{ $editors->links() }}
+        {{ $editors->links('pagination::simple-bootstrap-4') }}
     </div>
 </div>
 @endsection

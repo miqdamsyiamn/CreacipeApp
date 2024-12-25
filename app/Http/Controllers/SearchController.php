@@ -15,7 +15,7 @@ class SearchController extends Controller
 
         // Query hanya untuk resep dengan status approved (status_id = 2)
         $recipes = Recipe::with('user')
-            ->where('status_id', 2)
+            ->where('status_recipes_id', 2)
             ->where(function ($query) use ($keyword) {
                 $query->where('title', 'like', "%$keyword%")
                     ->orWhere('ingredients', 'like', "%$keyword%")
@@ -131,7 +131,7 @@ class SearchController extends Controller
 
         // Jika di halaman 'Kelola Resep', tambahkan filter status
         if ($isManageRecipes) {
-            $recipes->where('status_id', 1);
+            $recipes->where('status_recipes_id', 1);
         }
 
         $recipes = $recipes->paginate(10);

@@ -11,11 +11,13 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    // Tambahkan properti primary key
+    protected $primaryKey = 'user_id';
 
     // Relasi: Setiap User memiliki satu Role
     public function role()
     {
-        return $this->belongsTo(Role::class, 'role_id', 'id');
+        return $this->belongsTo(Role::class, 'role_id', 'role_id');
     }
 
     public function status()

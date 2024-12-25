@@ -61,13 +61,13 @@
                         <!-- Status Badge -->
                         <div class="mt-2">
                             <span class="badge 
-                            @if($recipe->status_id == 1) bg-warning 
-                            @elseif($recipe->status_id == 2) bg-success
-                            @elseif($recipe->status_id == 3) bg-danger
+                            @if($recipe->status_recipes_id == 1) bg-warning 
+                            @elseif($recipe->status_recipes_id == 2) bg-success
+                            @elseif($recipe->status_recipes_id == 3) bg-danger
                             @endif">
-                                @if($recipe->status_id == 1) Pending
-                                @elseif($recipe->status_id == 2) Approved
-                                @elseif($recipe->status_id == 3) Declined
+                                @if($recipe->status_recipes_id == 1) Pending
+                                @elseif($recipe->status_recipes_id == 2) Approved
+                                @elseif($recipe->status_recipes_id == 3) Declined
                                 @endif
                             </span>
                         </div>

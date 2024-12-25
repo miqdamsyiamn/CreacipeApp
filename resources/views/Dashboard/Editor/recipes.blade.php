@@ -55,7 +55,7 @@
                         <!-- Status Resep -->
                         <td>
                             <span class="badge 
-                    {{ $recipe->status_id == 1 ? 'bg-warning' : ($recipe->status_id == 2 ? 'bg-success' : 'bg-danger') }}">
+                    {{ $recipe->status_recipes_id == 1 ? 'bg-warning' : ($recipe->status_recipes_id == 2 ? 'bg-success' : 'bg-danger') }}">
                                 {{ $recipe->status->name }}
                             </span>
                         </td>
@@ -97,7 +97,7 @@
                             <form action="{{ route('editor.recipes.delete', $recipe->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-dark btn-sm">Delete</button>
+                                <button type="submit" class="btn btn-dark btn-sm mt-1">Delete</button>
                             </form>
                         </td>
                     </tr>

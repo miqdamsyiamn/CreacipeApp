@@ -4,12 +4,6 @@
             <form action="{{ route('editor.recipes.update', $recipe->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <!-- Notifikasi -->
-                @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-                @endif
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h5 class="modal-title">Edit Resep</h5>

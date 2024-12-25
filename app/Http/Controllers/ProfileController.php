@@ -42,17 +42,22 @@ class ProfileController extends Controller
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        // Cek apakah ada gambar profil yang diupload
+        // Proses unggah gambar baru
         if ($request->hasFile('profile_picture')) {
-            // Tentukan lokasi penyimpanan
+            // Hapus gambar lama jika ada
+            if ($user->profile_picture && file_exists(public_path($user->profile_picture))) {
+                unlink(public_path($user->profile_picture));
+            }
+
+            // Tentukan lokasi penyimpanan dan unggah file baru
             $destinationPath = public_path('assets/upload');
-            // Buat nama unik untuk file
             $fileName = time() . '-' . $request->file('profile_picture')->getClientOriginalName();
-            // Pindahkan file ke lokasi penyimpanan
             $request->file('profile_picture')->move($destinationPath, $fileName);
-            // Simpan path file dalam database
+
+            // Simpan path file gambar ke database
             $validatedData['profile_picture'] = 'assets/upload/' . $fileName;
         }
+
 
         // Perbarui data user
         $user->update($validatedData);

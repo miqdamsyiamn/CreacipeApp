@@ -18,7 +18,7 @@ class LoginController extends Controller
     public function login()
     {
         // Ambil resep dengan status_id = 2
-        $approvedRecipes = \App\Models\Recipe::where('status_id', 2)->latest()->get();
+        $approvedRecipes = \App\Models\Recipe::where('status_recipes_id', 2)->latest()->paginate(6);
 
         // Kirim status modal untuk menentukan modal mana yang dibuka
         $showLoginModal = session('showLoginModal', false);

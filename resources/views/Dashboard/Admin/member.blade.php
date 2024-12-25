@@ -55,7 +55,7 @@
                         </td>
                         <td>
                             <!-- Aktifkan/Nonaktifkan -->
-                            <form action="{{ route('admin.members.toggle', $member->id) }}" method="POST" class="d-inline">
+                            <form action="{{ route('admin.members.toggle', $member->user_id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-warning btn-sm">
@@ -64,7 +64,7 @@
                             </form>
 
                             <!-- Hapus Member -->
-                            <form action="{{ route('admin.members.delete', $member->id) }}" method="POST" class="d-inline">
+                            <form action="{{ route('admin.members.delete', $member->user_id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
@@ -83,7 +83,7 @@
 
     <!-- Paginasi -->
     <div class="d-flex justify-content-center mt-4">
-        {{ $members->links() }}
+        {{ $members->links('pagination::simple-bootstrap-4') }}
     </div>
 </div>
 @endsection

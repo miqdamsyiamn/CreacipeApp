@@ -55,9 +55,6 @@
                                 <!-- Google reCAPTCHA -->
                                 <div class="mb-3">
                                     {!! NoCaptcha::display() !!}
-                                    @if ($errors->has('g-recaptcha-response'))
-                                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
-                                    @endif
                                 </div>
                                 <button type="submit" class="btn btn-primary w-100">Register</button>
                             </form>

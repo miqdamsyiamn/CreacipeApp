@@ -23,7 +23,7 @@ class EditorController extends Controller
         $recipe = Recipe::findOrFail($id);
         // Update status dan tanggal approved
         $recipe->update([
-            'status_id' => 2,
+            'status_recipes_id' => 2,
             'accepted_date' => now(),
         ]);
 
@@ -37,7 +37,7 @@ class EditorController extends Controller
         $recipe = Recipe::findOrFail($id);
         // Update status, alasan, dan tanggal declined
         $recipe->update([
-            'status_id' => 3, // Declined
+            'status_recipes_id' => 3, // Declined
             'declined_date' => now(),
             'decline_reason' => $request->decline_reason,
         ]);

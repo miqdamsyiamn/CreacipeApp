@@ -12,10 +12,10 @@ class RecipesController extends Controller
     //menampilkan resep ke menu resepku
     public function index()
     {
-        $recipes = Recipe::with('user')->where('user_id', auth()->id())->paginate(6);
+        $recipes = Recipe::with('user')->where('user_id', auth()->id())->latest()->paginate(6);
         // Cek apakah ada resep dengan status Declined dan alasan
         foreach ($recipes as $recipe) {
-            if ($recipe->status_id == 3 && $recipe->decline_reason) {
+            if ($recipe->status_recipes_id == 3 && $recipe->decline_reason) {
                 // Simpan pesan decline ke dalam flash session
                 session()->flash('decline_message', 'Resep "' . $recipe->title . '" ditolak dengan alasan: ' . $recipe->decline_reason);
             }
@@ -62,7 +62,7 @@ class RecipesController extends Controller
             'steps' => json_encode($validatedData['steps']), // Langsung encode array
             'image' => $validatedData['image'] ?? null,
             'user_id' => auth()->id(),
-            'status_id' => 1,
+            'status_recipes_id' => 1,
             'category' => $validatedData['category'],
         ]);
 
@@ -130,7 +130,7 @@ class RecipesController extends Controller
         // Mengambil parameter kategori dari URL
         $category = $request->query('category');
         // Filter resep berdasarkan kategori (jika ada)
-        $query = Recipe::where('status_id', 2); // Status Approved
+        $query = Recipe::where('status_recipes_id', 2); // Status Approved
         if ($category) {
             // Cocokkan dengan kategori yang tersimpan di database
             if ($category === 'Indonesia') {
@@ -197,7 +197,7 @@ class RecipesController extends Controller
             'image' => $validatedData['image'] ?? null,
             'category' => $validatedData['category'],
             'user_id' => auth()->id(),
-            'status_id' => $request->status,
+            'status_recipes_id' => $request->status,
         ]);
 
         return redirect()->route('dashboard.editor.recipes.index')->with('success', 'Resep berhasil ditambahkan.');

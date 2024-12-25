@@ -15,6 +15,6 @@ class StatusRecipe extends Model
     // Relasi ke tabel recipes
     public function recipes()
     {
-        return $this->hasMany(Recipe::class, 'status_id');
+        return $this->hasMany(Recipe::class, 'status_recipes_id', 'status_recipes_id');
     }
 }

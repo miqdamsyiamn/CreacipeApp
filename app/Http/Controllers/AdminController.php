@@ -52,7 +52,7 @@ class AdminController extends Controller
     public function deleteEditor($id)
     {
         // Hapus editor berdasarkan ID
-        User::findOrFail($id)->delete();
+        User::where('user_id', $id)->firstOrFail()->delete();
 
         return redirect()->route('admin.editors')->with('success', 'Editor berhasil dihapus.');
     }
@@ -61,7 +61,7 @@ class AdminController extends Controller
     public function toggleStatus($id)
     {
         // Ambil user berdasarkan ID
-        $user = User::findOrFail($id);
+        $user = User::where('user_id', $id)->firstOrFail();
 
         // Ganti status_id (1: Aktif, 2: Nonaktif)
         $user->status_id = ($user->status_id == 1) ? 2 : 1;
@@ -86,7 +86,7 @@ class AdminController extends Controller
     public function deleteMember($id)
     {
         // Hapus member berdasarkan ID
-        User::findOrFail($id)->delete();
+        User::where('user_id', $id)->firstOrFail()->delete();
         return redirect()->route('admin.members')->with('success', 'Member berhasil dihapus.');
     }
 }

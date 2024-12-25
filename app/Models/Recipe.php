@@ -17,7 +17,7 @@ class Recipe extends Model
         'steps',
         'image',
         'user_id',
-        'status_id',
+        'status_recipes_id',
         'accepted_date',
         'declined_date',
         'decline_reason',
@@ -27,12 +27,12 @@ class Recipe extends Model
     // Relasi ke tabel users
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
     }
 
     // Relasi ke tabel status_recipes
     public function status()
     {
-        return $this->belongsTo(StatusRecipe::class, 'status_id');
+        return $this->belongsTo(StatusRecipe::class, 'status_recipes_id', 'status_recipes_id');
     }
 }
