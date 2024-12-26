@@ -41,6 +41,10 @@ class RecipesController extends Controller
             'steps.*' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'category' => 'required|string',
+        ], [
+            'image.image' => 'File yang diunggah harus berupa gambar.',
+            'image.mimes' => 'Format gambar yang diizinkan hanya jpeg, png, dan jpg.',
+            'image.max' => 'Ukuran gambar maksimal adalah 2MB.',
         ]);
 
         Log::info('Validated data:', $validatedData);
@@ -97,6 +101,10 @@ class RecipesController extends Controller
             'steps.*' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'category' => 'required|string',
+        ], [
+            'image.image' => 'File yang diunggah harus berupa gambar.',
+            'image.mimes' => 'Format gambar yang diizinkan hanya jpeg, png, dan jpg.',
+            'image.max' => 'Ukuran gambar maksimal adalah 2MB.',
         ]);
 
         // Update gambar jika ada
@@ -175,6 +183,10 @@ class RecipesController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'category' => 'required|string', // Tambahkan kategori
             'status' => 'required' // Validasi status (Pending, Approved, Declined)
+        ], [
+            'image.image' => 'File yang diunggah harus berupa gambar.',
+            'image.mimes' => 'Format gambar yang diizinkan hanya jpeg, png, dan jpg.',
+            'image.max' => 'Ukuran gambar maksimal adalah 2MB.',
         ]);
 
         Log::info('Validated data (Editor):', $validatedData);

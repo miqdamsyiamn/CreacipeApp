@@ -15,7 +15,16 @@
     @if(isset($message))
     <div class="alert alert-info text-center">{{ $message }}</div>
     @endif
-
+    <!-- notif eror image -->
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 
     <h1 class="text-center mb-4">Resepku</h1>
     <div class="d-flex justify-content-between align-items-center mb-3">

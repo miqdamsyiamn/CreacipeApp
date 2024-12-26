@@ -23,8 +23,9 @@
     <div class="d-flex">
         <div class="sidebar d-flex flex-column justify-content-between">
             <div>
-                <a href="{{ route('editor.dashboard') }}" class="active">Dashboard</a>
-                <a href="{{ route('editor.recipes.index') }}">Kelola Resep</a>
+                <a href="#" class="active">Dashboard</a>
+                <a href="{{ route('dashboard.editor.recipes.index') }}" class="mt-1">Lihat Semua Resep</a>
+                <a href="{{ route('editor.recipes.index') }}" class="mt-1">Kelola Resep</a>
             </div>
             <div class="mt-0">
                 <form action="{{ route('logout') }}" method="POST">

@@ -6,6 +6,16 @@
 <div class="container mt-4">
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRecipeModalEditor">Tambah Resep</button>
     <h2 class="text-center mb-4">Semua Resep</h2>
+    <!-- notif eror image -->
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <!-- Notifikasi -->
     @if (session('success'))
     <div class="alert alert-success">

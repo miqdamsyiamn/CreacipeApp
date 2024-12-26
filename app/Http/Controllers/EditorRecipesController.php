@@ -45,6 +45,11 @@ class EditorRecipesController extends Controller
             'steps.*' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'category' => 'required|string',
+        ], [
+            'image.image' => 'File yang diunggah harus berupa gambar.',
+            'image.mimes' => 'Format gambar yang diizinkan hanya jpeg, png, dan jpg.',
+            'image.max' => 'Ukuran gambar maksimal adalah 2MB.',
+
         ]);
 
         // Ambil data resep berdasarkan ID

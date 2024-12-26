@@ -25,7 +25,7 @@
         <div class="sidebar d-flex flex-column justify-content-between p-3" style="background-color: #ffffff; border-right: 1px solid #ddd; width: 250px;">
             <!-- Sidebar Menu -->
             <div>
-                <a href="{{ route('admin.dashboard') }}" class="nav-link active">Dashboard</a>
+                <a href="#" class="nav-link active">Dashboard</a>
                 <a href="{{ route('admin.editors') }}" class="nav-link">Kelola Editor</a>
                 <a href="{{ route('admin.members') }}" class="nav-link">Kelola Member</a>
             </div>

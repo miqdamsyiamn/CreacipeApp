@@ -4,6 +4,16 @@
 
 @section('content')
 <div class="container mt-5">
+    <!-- notif eror image -->
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <!-- Tombol Kembali -->
     <a href="{{ route('member.recipes.index') }}" class="btn btn-secondary mb-3">← Kembali</a>
     <h1 class="text-center mb-4">Edit Resep</h1>

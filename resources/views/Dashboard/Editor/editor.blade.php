@@ -9,7 +9,6 @@
     <div class="text-center">
         <a href="{{ route('editor.recipes.index') }}" class="btn btn-primary">Kelola Resep</a>
         <a href="{{ route('dashboard.editor.recipes.index') }}" class="btn btn-secondary">Lihat Semua Resep</a>
-
     </div>
 </div>
 @endsection
