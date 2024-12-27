@@ -10,6 +10,7 @@ class StatusRecipe extends Model
     use HasFactory;
 
     // Kolom yang dapat diisi
+    protected $primaryKey = 'status_recipes_id  ';
     protected $fillable = ['name'];
 
     // Relasi ke tabel recipes

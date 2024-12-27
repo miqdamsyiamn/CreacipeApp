@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1735294812">
+  <project timestamp="1735294812">
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Console\Kernel.php">
+      <class name="App\Console\Kernel" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="5" coveredelements="3"/>
+      </class>
+      <line num="16" type="method" name="schedule" visibility="protected" complexity="1" crap="2" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="26" type="method" name="commands" visibility="protected" complexity="1" crap="1" count="66"/>
+      <line num="28" type="stmt" count="66"/>
+      <line num="30" type="stmt" count="66"/>
+      <metrics loc="33" ncloc="21" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="5" coveredelements="3"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Exceptions\Handler.php">
+      <class name="App\Exceptions\Handler" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </class>
+      <line num="44" type="method" name="register" visibility="public" complexity="1" crap="1" count="66"/>
+      <line num="46" type="stmt" count="66"/>
+      <line num="48" type="stmt" count="66"/>
+      <metrics loc="51" ncloc="30" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Controllers\AdminController.php">
+      <class name="App\Http\Controllers\AdminController" namespace="global">
+        <metrics complexity="7" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="31" elements="37" coveredelements="37"/>
+      </class>
+      <line num="14" type="method" name="editors" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="26" type="method" name="storeEditor" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="52" type="method" name="deleteEditor" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="55" type="stmt" count="1"/>
+      <line num="57" type="stmt" count="1"/>
+      <line num="61" type="method" name="toggleStatus" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="64" type="stmt" count="1"/>
+      <line num="67" type="stmt" count="1"/>
+      <line num="68" type="stmt" count="1"/>
+      <line num="70" type="stmt" count="1"/>
+      <line num="74" type="method" name="members" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="77" type="stmt" count="1"/>
+      <line num="78" type="stmt" count="1"/>
+      <line num="79" type="stmt" count="1"/>
+      <line num="80" type="stmt" count="1"/>
+      <line num="82" type="stmt" count="1"/>
+      <line num="86" type="method" name="deleteMember" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="89" type="stmt" count="1"/>
+      <line num="90" type="stmt" count="1"/>
+      <metrics loc="93" ncloc="76" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="31" elements="37" coveredelements="37"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Controllers\Controller.php">
+      <class name="App\Http\Controllers\Controller" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Controllers\EditorController.php">
+      <class name="App\Http\Controllers\EditorController" namespace="global">
+        <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="25" coveredelements="25"/>
+      </class>
+      <line num="11" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="21" type="method" name="approve" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="35" type="method" name="decline" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="51" type="method" name="delete" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="53" type="stmt" count="1"/>
+      <line num="55" type="stmt" count="1"/>
+      <line num="57" type="stmt" count="1"/>
+      <line num="61" type="method" name="dashboard" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="1"/>
+      <metrics loc="67" ncloc="55" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="25" coveredelements="25"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Controllers\EditorRecipesController.php">
+      <class name="App\Http\Controllers\EditorRecipesController" namespace="global">
+        <metrics complexity="7" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="36" elements="40" coveredelements="38"/>
+      </class>
+      <line num="11" type="method" name="indexEditor" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="20" type="method" name="showEditorRecipe" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="36" type="method" name="update" visibility="public" complexity="4" crap="4" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="49" type="stmt" count="1"/>
+      <line num="50" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="53" type="stmt" count="1"/>
+      <line num="56" type="stmt" count="1"/>
+      <line num="59" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="1"/>
+      <line num="61" type="stmt" count="1"/>
+      <line num="62" type="stmt" count="1"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="66" type="stmt" count="1"/>
+      <line num="68" type="stmt" count="1"/>
+      <line num="69" type="stmt" count="0"/>
+      <line num="73" type="stmt" count="1"/>
+      <line num="74" type="stmt" count="1"/>
+      <line num="78" type="stmt" count="1"/>
+      <line num="81" type="stmt" count="1"/>
+      <metrics loc="84" ncloc="66" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="36" elements="40" coveredelements="38"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Controllers\LoginController.php">
+      <class name="App\Http\Controllers\LoginController" namespace="global">
+        <metrics complexity="11" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="74" coveredstatements="74" elements="78" coveredelements="78"/>
+      </class>
+      <line num="18" type="method" name="login" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="31" type="method" name="authenticate" visibility="public" complexity="7" crap="7" count="6"/>
+      <line num="34" type="stmt" count="6"/>
+      <line num="35" type="stmt" count="6"/>
+      <line num="36" type="stmt" count="6"/>
+      <line num="37" type="stmt" count="6"/>
+      <line num="38" type="stmt" count="6"/>
+      <line num="39" type="stmt" count="6"/>
+      <line num="40" type="stmt" count="6"/>
+      <line num="41" type="stmt" count="6"/>
+      <line num="42" type="stmt" count="6"/>
+      <line num="43" type="stmt" count="6"/>
+      <line num="44" type="stmt" count="6"/>
+      <line num="45" type="stmt" count="6"/>
+      <line num="48" type="stmt" count="6"/>
+      <line num="49" type="stmt" count="1"/>
+      <line num="50" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="52" type="stmt" count="1"/>
+      <line num="56" type="stmt" count="5"/>
+      <line num="58" type="stmt" count="5"/>
+      <line num="59" type="stmt" count="2"/>
+      <line num="60" type="stmt" count="2"/>
+      <line num="61" type="stmt" count="2"/>
+      <line num="62" type="stmt" count="2"/>
+      <line num="65" type="stmt" count="3"/>
+      <line num="66" type="stmt" count="2"/>
+      <line num="68" type="stmt" count="2"/>
+      <line num="69" type="stmt" count="2"/>
+      <line num="70" type="stmt" count="1"/>
+      <line num="71" type="stmt" count="2"/>
+      <line num="72" type="stmt" count="1"/>
+      <line num="74" type="stmt" count="1"/>
+      <line num="78" type="stmt" count="1"/>
+      <line num="79" type="stmt" count="1"/>
+      <line num="80" type="stmt" count="1"/>
+      <line num="81" type="stmt" count="1"/>
+      <line num="87" type="method" name="logout" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="89" type="stmt" count="1"/>
+      <line num="92" type="stmt" count="1"/>
+      <line num="93" type="stmt" count="1"/>
+      <line num="96" type="stmt" count="1"/>
+      <line num="100" type="method" name="register" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="103" type="stmt" count="2"/>
+      <line num="104" type="stmt" count="2"/>
+      <line num="105" type="stmt" count="2"/>
+      <line num="106" type="stmt" count="2"/>
+      <line num="107" type="stmt" count="2"/>
+      <line num="108" type="stmt" count="2"/>
+      <line num="109" type="stmt" count="2"/>
+      <line num="110" type="stmt" count="2"/>
+      <line num="111" type="stmt" count="2"/>
+      <line num="112" type="stmt" count="2"/>
+      <line num="113" type="stmt" count="2"/>
+      <line num="114" type="stmt" count="2"/>
+      <line num="117" type="stmt" count="2"/>
+      <line num="118" type="stmt" count="1"/>
+      <line num="119" type="stmt" count="1"/>
+      <line num="120" type="stmt" count="1"/>
+      <line num="121" type="stmt" count="1"/>
+      <line num="125" type="stmt" count="1"/>
+      <line num="126" type="stmt" count="1"/>
+      <line num="127" type="stmt" count="1"/>
+      <line num="128" type="stmt" count="1"/>
+      <line num="129" type="stmt" count="1"/>
+      <line num="130" type="stmt" count="1"/>
+      <line num="131" type="stmt" count="1"/>
+      <line num="132" type="stmt" count="1"/>
+      <line num="135" type="stmt" count="1"/>
+      <line num="136" type="stmt" count="1"/>
+      <line num="137" type="stmt" count="1"/>
+      <line num="138" type="stmt" count="1"/>
+      <line num="141" type="stmt" count="1"/>
+      <line num="143" type="stmt" count="1"/>
+      <metrics loc="146" ncloc="128" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="74" coveredstatements="74" elements="78" coveredelements="78"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Controllers\ProfileController.php">
+      <class name="App\Http\Controllers\ProfileController" namespace="global">
+        <metrics complexity="9" methods="5" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="29" elements="36" coveredelements="32"/>
+      </class>
+      <line num="16" type="method" name="showProfile" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="24" type="method" name="edit" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="34" type="method" name="update" visibility="public" complexity="4" crap="4.01" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="49" type="stmt" count="0"/>
+      <line num="53" type="stmt" count="1"/>
+      <line num="54" type="stmt" count="1"/>
+      <line num="55" type="stmt" count="1"/>
+      <line num="58" type="stmt" count="1"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="66" type="stmt" count="1"/>
+      <line num="70" type="method" name="changePassword" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="72" type="stmt" count="1"/>
+      <line num="76" type="method" name="updatePassword" visibility="public" complexity="2" crap="2.00" count="2"/>
+      <line num="78" type="stmt" count="2"/>
+      <line num="79" type="stmt" count="2"/>
+      <line num="80" type="stmt" count="2"/>
+      <line num="81" type="stmt" count="2"/>
+      <line num="84" type="stmt" count="1"/>
+      <line num="85" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="1"/>
+      <line num="90" type="stmt" count="1"/>
+      <line num="91" type="stmt" count="1"/>
+      <line num="92" type="stmt" count="1"/>
+      <line num="95" type="stmt" count="1"/>
+      <line num="97" type="stmt" count="1"/>
+      <metrics loc="100" ncloc="80" classes="1" methods="5" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="29" elements="36" coveredelements="32"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Controllers\RecipesController.php">
+      <class name="App\Http\Controllers\RecipesController" namespace="global">
+        <metrics complexity="22" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="117" coveredstatements="116" elements="126" coveredelements="124"/>
+      </class>
+      <line num="13" type="method" name="index" visibility="public" complexity="4" crap="4" count="2"/>
+      <line num="15" type="stmt" count="2"/>
+      <line num="17" type="stmt" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="27" type="method" name="create" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="33" type="method" name="store" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="50" type="stmt" count="1"/>
+      <line num="53" type="stmt" count="1"/>
+      <line num="54" type="stmt" count="1"/>
+      <line num="55" type="stmt" count="1"/>
+      <line num="56" type="stmt" count="1"/>
+      <line num="59" type="stmt" count="1"/>
+      <line num="62" type="stmt" count="1"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="1"/>
+      <line num="65" type="stmt" count="1"/>
+      <line num="66" type="stmt" count="1"/>
+      <line num="67" type="stmt" count="1"/>
+      <line num="68" type="stmt" count="1"/>
+      <line num="69" type="stmt" count="1"/>
+      <line num="70" type="stmt" count="1"/>
+      <line num="71" type="stmt" count="1"/>
+      <line num="73" type="stmt" count="1"/>
+      <line num="76" type="method" name="edit" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="78" type="stmt" count="2"/>
+      <line num="80" type="stmt" count="2"/>
+      <line num="81" type="stmt" count="1"/>
+      <line num="83" type="stmt" count="1"/>
+      <line num="87" type="method" name="update" visibility="public" complexity="5" crap="5" count="2"/>
+      <line num="89" type="stmt" count="2"/>
+      <line num="91" type="stmt" count="2"/>
+      <line num="92" type="stmt" count="1"/>
+      <line num="95" type="stmt" count="1"/>
+      <line num="96" type="stmt" count="1"/>
+      <line num="97" type="stmt" count="1"/>
+      <line num="98" type="stmt" count="1"/>
+      <line num="99" type="stmt" count="1"/>
+      <line num="100" type="stmt" count="1"/>
+      <line num="101" type="stmt" count="1"/>
+      <line num="102" type="stmt" count="1"/>
+      <line num="103" type="stmt" count="1"/>
+      <line num="104" type="stmt" count="1"/>
+      <line num="105" type="stmt" count="1"/>
+      <line num="106" type="stmt" count="1"/>
+      <line num="107" type="stmt" count="1"/>
+      <line num="108" type="stmt" count="1"/>
+      <line num="111" type="stmt" count="1"/>
+      <line num="112" type="stmt" count="1"/>
+      <line num="113" type="stmt" count="1"/>
+      <line num="114" type="stmt" count="1"/>
+      <line num="117" type="stmt" count="1"/>
+      <line num="118" type="stmt" count="0"/>
+      <line num="123" type="stmt" count="1"/>
+      <line num="124" type="stmt" count="1"/>
+      <line num="125" type="stmt" count="1"/>
+      <line num="126" type="stmt" count="1"/>
+      <line num="127" type="stmt" count="1"/>
+      <line num="128" type="stmt" count="1"/>
+      <line num="129" type="stmt" count="1"/>
+      <line num="130" type="stmt" count="1"/>
+      <line num="132" type="stmt" count="1"/>
+      <line num="136" type="method" name="home" visibility="public" complexity="4" crap="4" count="3"/>
+      <line num="139" type="stmt" count="3"/>
+      <line num="141" type="stmt" count="3"/>
+      <line num="142" type="stmt" count="3"/>
+      <line num="144" type="stmt" count="2"/>
+      <line num="145" type="stmt" count="1"/>
+      <line num="146" type="stmt" count="1"/>
+      <line num="147" type="stmt" count="1"/>
+      <line num="151" type="stmt" count="3"/>
+      <line num="152" type="stmt" count="3"/>
+      <line num="157" type="method" name="show" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="160" type="stmt" count="1"/>
+      <line num="163" type="stmt" count="1"/>
+      <line num="168" type="method" name="createByEditor" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="170" type="stmt" count="1"/>
+      <line num="174" type="method" name="storeByEditor" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="176" type="stmt" count="1"/>
+      <line num="177" type="stmt" count="1"/>
+      <line num="178" type="stmt" count="1"/>
+      <line num="179" type="stmt" count="1"/>
+      <line num="180" type="stmt" count="1"/>
+      <line num="181" type="stmt" count="1"/>
+      <line num="182" type="stmt" count="1"/>
+      <line num="183" type="stmt" count="1"/>
+      <line num="184" type="stmt" count="1"/>
+      <line num="185" type="stmt" count="1"/>
+      <line num="186" type="stmt" count="1"/>
+      <line num="187" type="stmt" count="1"/>
+      <line num="188" type="stmt" count="1"/>
+      <line num="189" type="stmt" count="1"/>
+      <line num="190" type="stmt" count="1"/>
+      <line num="192" type="stmt" count="1"/>
+      <line num="195" type="stmt" count="1"/>
+      <line num="196" type="stmt" count="1"/>
+      <line num="197" type="stmt" count="1"/>
+      <line num="198" type="stmt" count="1"/>
+      <line num="201" type="stmt" count="1"/>
+      <line num="204" type="stmt" count="1"/>
+      <line num="205" type="stmt" count="1"/>
+      <line num="206" type="stmt" count="1"/>
+      <line num="207" type="stmt" count="1"/>
+      <line num="208" type="stmt" count="1"/>
+      <line num="209" type="stmt" count="1"/>
+      <line num="210" type="stmt" count="1"/>
+      <line num="211" type="stmt" count="1"/>
+      <line num="212" type="stmt" count="1"/>
+      <line num="213" type="stmt" count="1"/>
+      <line num="215" type="stmt" count="1"/>
+      <metrics loc="218" ncloc="178" classes="1" methods="9" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="117" coveredstatements="116" elements="126" coveredelements="124"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Controllers\SearchController.php">
+      <class name="App\Http\Controllers\SearchController" namespace="global">
+        <metrics complexity="8" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="77" elements="84" coveredelements="82"/>
+      </class>
+      <line num="12" type="method" name="search" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="36" type="method" name="searchUserRecipes" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="49" type="stmt" count="1"/>
+      <line num="50" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="55" type="method" name="searchEditors" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="57" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="1"/>
+      <line num="61" type="stmt" count="1"/>
+      <line num="62" type="stmt" count="1"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="1"/>
+      <line num="65" type="stmt" count="1"/>
+      <line num="67" type="stmt" count="1"/>
+      <line num="68" type="stmt" count="1"/>
+      <line num="69" type="stmt" count="1"/>
+      <line num="70" type="stmt" count="1"/>
+      <line num="74" type="method" name="searchMembers" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="76" type="stmt" count="1"/>
+      <line num="79" type="stmt" count="1"/>
+      <line num="80" type="stmt" count="1"/>
+      <line num="81" type="stmt" count="1"/>
+      <line num="82" type="stmt" count="1"/>
+      <line num="83" type="stmt" count="1"/>
+      <line num="84" type="stmt" count="1"/>
+      <line num="87" type="stmt" count="1"/>
+      <line num="88" type="stmt" count="1"/>
+      <line num="89" type="stmt" count="1"/>
+      <line num="90" type="stmt" count="1"/>
+      <line num="94" type="method" name="searchEditorRecipes" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="96" type="stmt" count="1"/>
+      <line num="99" type="stmt" count="1"/>
+      <line num="100" type="stmt" count="1"/>
+      <line num="101" type="stmt" count="1"/>
+      <line num="102" type="stmt" count="1"/>
+      <line num="103" type="stmt" count="1"/>
+      <line num="104" type="stmt" count="1"/>
+      <line num="107" type="stmt" count="1"/>
+      <line num="108" type="stmt" count="1"/>
+      <line num="109" type="stmt" count="1"/>
+      <line num="110" type="stmt" count="1"/>
+      <line num="114" type="method" name="searchAllRecipes" visibility="public" complexity="3" crap="3.00" count="1"/>
+      <line num="116" type="stmt" count="1"/>
+      <line num="119" type="stmt" count="1"/>
+      <line num="122" type="stmt" count="1"/>
+      <line num="123" type="stmt" count="1"/>
+      <line num="124" type="stmt" count="1"/>
+      <line num="125" type="stmt" count="1"/>
+      <line num="126" type="stmt" count="1"/>
+      <line num="127" type="stmt" count="1"/>
+      <line num="128" type="stmt" count="1"/>
+      <line num="129" type="stmt" count="1"/>
+      <line num="130" type="stmt" count="1"/>
+      <line num="133" type="stmt" count="1"/>
+      <line num="134" type="stmt" count="0"/>
+      <line num="137" type="stmt" count="1"/>
+      <line num="140" type="stmt" count="1"/>
+      <line num="142" type="stmt" count="1"/>
+      <line num="143" type="stmt" count="1"/>
+      <line num="144" type="stmt" count="1"/>
+      <line num="145" type="stmt" count="1"/>
+      <metrics loc="148" ncloc="129" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="77" elements="84" coveredelements="82"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Kernel.php">
+      <class name="App\Http\Kernel" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="70" ncloc="49" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\AdminMiddleware.php">
+      <class name="App\Http\Middleware\AdminMiddleware" namespace="global">
+        <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="9" coveredelements="5"/>
+      </class>
+      <line num="18" type="method" name="handle" visibility="public" complexity="4" crap="4.84" count="5"/>
+      <line num="20" type="stmt" count="5"/>
+      <line num="21" type="stmt" count="5"/>
+      <line num="24" type="stmt" count="5"/>
+      <line num="26" type="stmt" count="5"/>
+      <line num="27" type="stmt" count="5"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <metrics loc="39" ncloc="26" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="5" elements="9" coveredelements="5"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\Authenticate.php">
+      <class name="App\Http\Middleware\Authenticate" namespace="global">
+        <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+      </class>
+      <line num="15" type="method" name="redirectTo" visibility="protected" complexity="2" crap="6" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="18" type="stmt" count="0"/>
+      <metrics loc="22" ncloc="16" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\EditorMiddleware.php">
+      <class name="App\Http\Middleware\EditorMiddleware" namespace="global">
+        <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="3" elements="7" coveredelements="3"/>
+      </class>
+      <line num="18" type="method" name="handle" visibility="public" complexity="4" crap="6.00" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <metrics loc="33" ncloc="25" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="3" elements="7" coveredelements="3"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\EncryptCookies.php">
+      <class name="App\Http\Middleware\EncryptCookies" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="18" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\PreventRequestsDuringMaintenance.php">
+      <class name="App\Http\Middleware\PreventRequestsDuringMaintenance" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="18" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\RedirectIfAuthenticated.php">
+      <class name="App\Http\Middleware\RedirectIfAuthenticated" namespace="global">
+        <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+      </class>
+      <line num="20" type="method" name="handle" visibility="public" complexity="4" crap="20" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <metrics loc="33" ncloc="25" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\TrimStrings.php">
+      <class name="App\Http\Middleware\TrimStrings" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="20" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\TrustHosts.php">
+      <class name="App\Http\Middleware\TrustHosts" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+      </class>
+      <line num="14" type="method" name="hosts" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="18" type="stmt" count="0"/>
+      <metrics loc="21" ncloc="16" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\TrustProxies.php">
+      <class name="App\Http\Middleware\TrustProxies" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="29" ncloc="19" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\ValidateSignature.php">
+      <class name="App\Http\Middleware\ValidateSignature" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="23" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Http\Middleware\VerifyCsrfToken.php">
+      <class name="App\Http\Middleware\VerifyCsrfToken" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="18" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Mail\AccountDetailsMail.php">
+      <class name="App\Mail\AccountDetailsMail" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
+      </class>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="18" type="stmt" count="3"/>
+      <line num="19" type="stmt" count="3"/>
+      <line num="22" type="method" name="build" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="24" type="stmt" count="2"/>
+      <line num="25" type="stmt" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="30" type="stmt" count="2"/>
+      <metrics loc="33" ncloc="33" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Mail\EditorAccountMail.php">
+      <class name="App\Mail\EditorAccountMail" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="24" type="stmt" count="2"/>
+      <line num="32" type="method" name="build" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <metrics loc="39" ncloc="29" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Mail\PasswordUpdatedMail.php">
+      <class name="App\Mail\PasswordUpdatedMail" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="24" type="stmt" count="2"/>
+      <line num="32" type="method" name="build" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <metrics loc="39" ncloc="29" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Models\Recipe.php">
+      <class name="App\Models\Recipe" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="29" type="method" name="user" visibility="public" complexity="1" crap="1" count="15"/>
+      <line num="31" type="stmt" count="15"/>
+      <line num="35" type="method" name="status" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="37" type="stmt" count="4"/>
+      <metrics loc="40" ncloc="37" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Models\Role.php">
+      <class name="App\Models\Role" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="14" type="method" name="users" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <metrics loc="19" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Models\Status.php">
+      <class name="App\Models\Status" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="15" type="method" name="users" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <metrics loc="20" ncloc="20" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Models\StatusRecipe.php">
+      <class name="App\Models\StatusRecipe" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="17" type="method" name="recipes" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <metrics loc="22" ncloc="20" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Models\User.php">
+      <class name="App\Models\User" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="18" type="method" name="role" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="23" type="method" name="status" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="25" type="stmt" count="5"/>
+      <metrics loc="62" ncloc="44" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Providers\AppServiceProvider.php">
+      <class name="App\Providers\AppServiceProvider" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="14" type="method" name="register" visibility="public" complexity="1" crap="1" count="66"/>
+      <line num="17" type="stmt" count="66"/>
+      <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="66"/>
+      <line num="27" type="stmt" count="66"/>
+      <metrics loc="29" ncloc="17" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Providers\AuthServiceProvider.php">
+      <class name="App\Providers\AuthServiceProvider" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="66"/>
+      <line num="26" type="stmt" count="66"/>
+      <metrics loc="31" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Providers\BroadcastServiceProvider.php">
+      <class name="App\Providers\BroadcastServiceProvider" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+      </class>
+      <line num="15" type="method" name="boot" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <metrics loc="22" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Providers\EventServiceProvider.php">
+      <class name="App\Providers\EventServiceProvider" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="28" type="method" name="boot" visibility="public" complexity="1" crap="1" count="66"/>
+      <line num="31" type="stmt" count="66"/>
+      <line num="38" type="method" name="shouldDiscoverEvents" visibility="public" complexity="1" crap="1" count="66"/>
+      <line num="40" type="stmt" count="66"/>
+      <metrics loc="43" ncloc="27" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="C:\xampp\htdocs\CreacipeApp\app\Providers\RouteServiceProvider.php">
+      <class name="App\Providers\RouteServiceProvider" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="10" elements="13" coveredelements="11"/>
+      </class>
+      <line num="27" type="method" name="boot" visibility="public" complexity="1" crap="1" count="66"/>
+      <line num="29" type="stmt" count="66"/>
+      <line num="31" type="stmt" count="66"/>
+      <line num="32" type="stmt" count="66"/>
+      <line num="33" type="stmt" count="66"/>
+      <line num="34" type="stmt" count="66"/>
+      <line num="36" type="stmt" count="66"/>
+      <line num="37" type="stmt" count="66"/>
+      <line num="38" type="stmt" count="66"/>
+      <line num="46" type="method" name="configureRateLimiting" visibility="protected" complexity="2" crap="2.15" count="66"/>
+      <line num="48" type="stmt" count="66"/>
+      <line num="49" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="66"/>
+      <metrics loc="53" ncloc="36" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="10" elements="13" coveredelements="11"/>
+    </file>
+    <metrics files="35" loc="1750" ncloc="1372" classes="27" methods="67" coveredmethods="54" conditionals="0" coveredconditionals="0" statements="461" coveredstatements="436" elements="528" coveredelements="490"/>
+  </project>
+</coverage>

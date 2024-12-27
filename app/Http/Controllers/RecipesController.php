@@ -214,14 +214,4 @@ class RecipesController extends Controller
 
         return redirect()->route('dashboard.editor.recipes.index')->with('success', 'Resep berhasil ditambahkan.');
     }
-
-    //menampilkan resep yang dibuat editor 
-    public function showEditorRecipes()
-    {
-        // Ambil semua resep tanpa memfilter status
-        $recipes = Recipe::with('user')->latest()->get();
-
-        // Kirim data ke view
-        return view('recipes.showeditor', compact('recipes'));
-    }
 }
