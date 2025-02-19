@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Recipe;
+use Illuminate\Support\Facades\DB;
 
 class EditorController extends Controller
 {
@@ -20,13 +21,15 @@ class EditorController extends Controller
     // Approve resep
     public function approve($id)
     {
-        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
+        DB::transaction(function () use ($id) {
+            $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
 
-        // Update status dan tanggal approved
-        $recipe->update([
-            'status_recipes_id' => 2,
-            'accepted_date' => now(),
-        ]);
+            // Update status dan tanggal approved
+            $recipe->update([
+                'status_recipes_id' => 2, // Approved
+                'accepted_date' => now(),
+            ]);
+        });
 
         return redirect()->back()->with('success', 'Resep berhasil disetujui.');
     }
@@ -34,25 +37,29 @@ class EditorController extends Controller
     // Decline resep
     public function decline(Request $request, $id)
     {
-        // Set status menjadi declined (ID status: 3)
-        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
+        DB::transaction(function () use ($request, $id) {
+            $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
 
-        // Update status, alasan, dan tanggal declined
-        $recipe->update([
-            'status_recipes_id' => 3, // Declined
-            'declined_date' => now(),
-            'decline_reason' => $request->decline_reason,
-        ]);
-        
+            // Update status, alasan, dan tanggal declined
+            $recipe->update([
+                'status_recipes_id' => 3, // Declined
+                'declined_date' => now(),
+                'decline_reason' => $request->decline_reason,
+            ]);
+        });
+
         return redirect()->back()->with('success', 'Resep berhasil ditolak.');
     }
 
     // Hapus resep
     public function delete($id)
     {
-        $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
+        DB::transaction(function () use ($id) {
+            $recipe = Recipe::where('recipe_id', $id)->firstOrFail();
 
-        $recipe->delete();
+            // Hapus data resep
+            $recipe->delete();
+        });
 
         return redirect()->back()->with('success', 'Resep berhasil dihapus.');
     }

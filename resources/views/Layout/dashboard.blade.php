@@ -26,7 +26,9 @@
             <!-- Sidebar Menu -->
             <div>
                 <a href="#" class="nav-link active">Dashboard</a>
+                <br>
                 <a href="{{ route('admin.editors') }}" class="nav-link">Kelola Editor</a>
+                <br>
                 <a href="{{ route('admin.members') }}" class="nav-link">Kelola Member</a>
             </div>
             <!-- Logout Button -->

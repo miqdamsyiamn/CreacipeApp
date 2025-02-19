@@ -7,10 +7,11 @@
     <!-- Notifikasi Pesan Decline -->
     @if (session('decline_message'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('decline_message') }}
+        {!! session('decline_message') !!}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+
     <!-- Pesan Pencarian -->
     @if(isset($message))
     <div class="alert alert-info text-center">{{ $message }}</div>

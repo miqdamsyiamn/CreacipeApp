@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="66" assertions="192" errors="3" warnings="0" failures="15" skipped="0" time="9.652147">
-    <testsuite name="Feature" tests="66" assertions="192" errors="3" warnings="0" failures="15" skipped="0" time="9.652147">
-      <testsuite name="Tests\Feature\Controllers\AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" tests="6" assertions="21" errors="2" warnings="0" failures="1" skipped="0" time="0.787561">
-        <testcase name="it_can_display_editors_list" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="43" assertions="3" time="0.295538"/>
-        <testcase name="it_can_store_a_new_editor" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="58" assertions="5" time="0.099529"/>
-        <testcase name="it_can_delete_an_editor" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="84" assertions="4" time="0.079351">
+  <testsuite name="" tests="66" assertions="190" errors="4" warnings="0" failures="15" skipped="0" time="9.675256">
+    <testsuite name="Feature" tests="66" assertions="190" errors="4" warnings="0" failures="15" skipped="0" time="9.675256">
+      <testsuite name="Tests\Feature\Controllers\AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" tests="6" assertions="21" errors="2" warnings="0" failures="1" skipped="0" time="0.830331">
+        <testcase name="it_can_display_editors_list" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="43" assertions="3" time="0.337769"/>
+        <testcase name="it_can_store_a_new_editor" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="58" assertions="5" time="0.107372"/>
+        <testcase name="it_can_delete_an_editor" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="84" assertions="4" time="0.086886">
           <error type="Illuminate\Database\QueryException">Tests\Feature\Controllers\AdminControllerTest::it_can_delete_an_editor
-Illuminate\Database\QueryException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause' (SQL: select count(*) as aggregate from `users` where (`id` = 1904))
+Illuminate\Database\QueryException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause' (SQL: select count(*) as aggregate from `users` where (`id` = 2539))
 
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:720
@@ -22,7 +22,7 @@ C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\Cons
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:50
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php:99</error>
         </testcase>
-        <testcase name="it_can_toggle_an_editor_status" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="104" assertions="2" time="0.105267">
+        <testcase name="it_can_toggle_an_editor_status" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="104" assertions="2" time="0.107348">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\AdminControllerTest::it_can_toggle_an_editor_status
 Failed asserting that two strings are equal.
 --- Expected
@@ -35,10 +35,10 @@ C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\Test
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:154
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php:115</failure>
         </testcase>
-        <testcase name="it_can_display_members_list" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="124" assertions="3" time="0.120132"/>
-        <testcase name="it_can_delete_a_member" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="139" assertions="4" time="0.087744">
+        <testcase name="it_can_display_members_list" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="124" assertions="3" time="0.115826"/>
+        <testcase name="it_can_delete_a_member" class="Tests\Feature\Controllers\AdminControllerTest" classname="Tests.Feature.Controllers.AdminControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php" line="139" assertions="4" time="0.075130">
           <error type="Illuminate\Database\QueryException">Tests\Feature\Controllers\AdminControllerTest::it_can_delete_a_member
-Illuminate\Database\QueryException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'users' in 'where clause' (SQL: select count(*) as aggregate from `users` where (`users` = 1914))
+Illuminate\Database\QueryException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'users' in 'where clause' (SQL: select count(*) as aggregate from `users` where (`users` = 2549))
 
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:720
@@ -54,8 +54,8 @@ C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Foundation\T
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\AdminControllerTest.php:154</error>
         </testcase>
       </testsuite>
-      <testsuite name="Tests\Feature\Controllers\EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" tests="5" assertions="13" errors="0" warnings="0" failures="1" skipped="0" time="0.994901">
-        <testcase name="it_can_display_recipes_list" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="25" assertions="1" time="0.653579">
+      <testsuite name="Tests\Feature\Controllers\EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" tests="5" assertions="13" errors="0" warnings="0" failures="1" skipped="0" time="0.935760">
+        <testcase name="it_can_display_recipes_list" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="25" assertions="1" time="0.598738">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\EditorControllerTest::it_can_display_recipes_list
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -243,13 +243,13 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php:33</failure>
         </testcase>
-        <testcase name="it_can_approve_a_recipe" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="39" assertions="3" time="0.082295"/>
-        <testcase name="it_can_decline_a_recipe" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="57" assertions="4" time="0.110861"/>
-        <testcase name="it_can_delete_a_recipe" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="78" assertions="3" time="0.081558"/>
-        <testcase name="it_can_display_dashboard" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="95" assertions="2" time="0.066608"/>
+        <testcase name="it_can_approve_a_recipe" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="39" assertions="3" time="0.092393"/>
+        <testcase name="it_can_decline_a_recipe" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="57" assertions="4" time="0.085894"/>
+        <testcase name="it_can_delete_a_recipe" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="78" assertions="3" time="0.078659"/>
+        <testcase name="it_can_display_dashboard" class="Tests\Feature\Controllers\EditorControllerTest" classname="Tests.Feature.Controllers.EditorControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorControllerTest.php" line="95" assertions="2" time="0.080075"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Controllers\EditorRecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php" tests="3" assertions="8" errors="0" warnings="0" failures="2" skipped="0" time="0.604257">
-        <testcase name="it_can_display_recipes_in_dashboard_editor" class="Tests\Feature\Controllers\EditorRecipesControllerTest" classname="Tests.Feature.Controllers.EditorRecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php" line="27" assertions="1" time="0.425801">
+      <testsuite name="Tests\Feature\Controllers\EditorRecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php" tests="3" assertions="8" errors="0" warnings="0" failures="2" skipped="0" time="0.657944">
+        <testcase name="it_can_display_recipes_in_dashboard_editor" class="Tests\Feature\Controllers\EditorRecipesControllerTest" classname="Tests.Feature.Controllers.EditorRecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php" line="27" assertions="1" time="0.475450">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\EditorRecipesControllerTest::it_can_display_recipes_in_dashboard_editor
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -421,18 +421,18 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php:38</failure>
         </testcase>
-        <testcase name="it_can_show_editor_recipe_details" class="Tests\Feature\Controllers\EditorRecipesControllerTest" classname="Tests.Feature.Controllers.EditorRecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php" line="44" assertions="2" time="0.070083"/>
-        <testcase name="it_can_update_a_recipe" class="Tests\Feature\Controllers\EditorRecipesControllerTest" classname="Tests.Feature.Controllers.EditorRecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php" line="64" assertions="5" time="0.108373">
+        <testcase name="it_can_show_editor_recipe_details" class="Tests\Feature\Controllers\EditorRecipesControllerTest" classname="Tests.Feature.Controllers.EditorRecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php" line="44" assertions="2" time="0.083782"/>
+        <testcase name="it_can_update_a_recipe" class="Tests\Feature\Controllers\EditorRecipesControllerTest" classname="Tests.Feature.Controllers.EditorRecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php" line="64" assertions="5" time="0.098711">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\EditorRecipesControllerTest::it_can_update_a_recipe
-Unable to find a file or directory at path [assets/upload/7MGPQX2ez3MoCVFYHhFscQcZT5YPNhn2IUlU2fsk.jpg].
+Unable to find a file or directory at path [assets/upload/n7v3fCSFlhE5o76iSpR7SfsaCrOEKTNj1EcUxsch.jpg].
   Failed asserting that false is true.
 
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Filesystem\FilesystemAdapter.php:120
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\EditorRecipesControllerTest.php:97</failure>
         </testcase>
       </testsuite>
-      <testsuite name="Tests\Feature\Controllers\LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" tests="10" assertions="43" errors="0" warnings="0" failures="1" skipped="0" time="1.383742">
-        <testcase name="it_can_display_login_page" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="17" assertions="1" time="0.470965">
+      <testsuite name="Tests\Feature\Controllers\LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" tests="10" assertions="43" errors="0" warnings="0" failures="1" skipped="0" time="1.368011">
+        <testcase name="it_can_display_login_page" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="17" assertions="1" time="0.453174">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\LoginControllerTest::it_can_display_login_page
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -604,20 +604,20 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php:20</failure>
         </testcase>
-        <testcase name="it_can_login_successfully_with_valid_credentials" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="25" assertions="5" time="0.120065"/>
-        <testcase name="it_fails_login_with_invalid_credentials" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="47" assertions="4" time="0.266759"/>
-        <testcase name="it_handles_login_for_disabled_user" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="64" assertions="4" time="0.083785"/>
-        <testcase name="it_logs_out_user_successfully" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="87" assertions="3" time="0.043671"/>
-        <testcase name="it_registers_a_new_user_successfully" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="99" assertions="3" time="0.065186"/>
-        <testcase name="it_fails_registration_with_invalid_data" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="119" assertions="6" time="0.070512"/>
-        <testcase name="it_fails_login_due_to_validation_errors" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="142" assertions="6" time="0.079182"/>
-        <testcase name="it_prevents_login_for_inactive_user" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="156" assertions="5" time="0.073049"/>
-        <testcase name="it_redirects_user_based_on_role" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="183" assertions="6" time="0.110566"/>
+        <testcase name="it_can_login_successfully_with_valid_credentials" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="25" assertions="5" time="0.097399"/>
+        <testcase name="it_fails_login_with_invalid_credentials" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="47" assertions="4" time="0.264898"/>
+        <testcase name="it_handles_login_for_disabled_user" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="64" assertions="4" time="0.051773"/>
+        <testcase name="it_logs_out_user_successfully" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="87" assertions="3" time="0.044401"/>
+        <testcase name="it_registers_a_new_user_successfully" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="99" assertions="3" time="0.096119"/>
+        <testcase name="it_fails_registration_with_invalid_data" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="119" assertions="6" time="0.078633"/>
+        <testcase name="it_fails_login_due_to_validation_errors" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="142" assertions="6" time="0.071015"/>
+        <testcase name="it_prevents_login_for_inactive_user" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="156" assertions="5" time="0.091243"/>
+        <testcase name="it_redirects_user_based_on_role" class="Tests\Feature\Controllers\LoginControllerTest" classname="Tests.Feature.Controllers.LoginControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\LoginControllerTest.php" line="183" assertions="6" time="0.119356"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Controllers\ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" tests="6" assertions="19" errors="1" warnings="0" failures="0" skipped="0" time="0.460568">
-        <testcase name="it_can_display_user_profile" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="26" assertions="3" time="0.093610"/>
-        <testcase name="it_can_display_edit_profile_form" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="38" assertions="3" time="0.071341"/>
-        <testcase name="it_can_update_user_profile" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="50" assertions="4" time="0.078767">
+      <testsuite name="Tests\Feature\Controllers\ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" tests="6" assertions="19" errors="1" warnings="0" failures="0" skipped="0" time="0.468425">
+        <testcase name="it_can_display_user_profile" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="26" assertions="3" time="0.078556"/>
+        <testcase name="it_can_display_edit_profile_form" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="38" assertions="3" time="0.077841"/>
+        <testcase name="it_can_update_user_profile" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="50" assertions="4" time="0.086446">
           <error type="Illuminate\Database\QueryException">Tests\Feature\Controllers\ProfileControllerTest::it_can_update_user_profile
 Illuminate\Database\QueryException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause' (SQL: select count(*) as aggregate from `users` where (`id` is null and `bio` = Updated bio))
 
@@ -634,15 +634,15 @@ C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\Cons
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:30
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php:70</error>
         </testcase>
-        <testcase name="it_can_display_change_password_form" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="77" assertions="2" time="0.069194"/>
-        <testcase name="it_can_update_password_successfully" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="88" assertions="5" time="0.073048"/>
-        <testcase name="it_fails_to_update_password_with_invalid_current_password" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="113" assertions="2" time="0.074607"/>
+        <testcase name="it_can_display_change_password_form" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="77" assertions="2" time="0.074071"/>
+        <testcase name="it_can_update_password_successfully" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="88" assertions="5" time="0.076837"/>
+        <testcase name="it_fails_to_update_password_with_invalid_current_password" class="Tests\Feature\Controllers\ProfileControllerTest" classname="Tests.Feature.Controllers.ProfileControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\ProfileControllerTest.php" line="113" assertions="2" time="0.074676"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Controllers\RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" tests="14" assertions="29" errors="0" warnings="0" failures="7" skipped="0" time="2.942814">
-        <testcase name="it_can_display_member_recipes" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="24" assertions="3" time="0.092816"/>
-        <testcase name="it_can_display_create_recipe_form" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="40" assertions="2" time="0.064001"/>
-        <testcase name="it_can_store_new_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="51" assertions="4" time="0.114819"/>
-        <testcase name="it_can_edit_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="77" assertions="1" time="0.423409">
+      <testsuite name="Tests\Feature\Controllers\RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" tests="14" assertions="29" errors="0" warnings="0" failures="7" skipped="0" time="2.793347">
+        <testcase name="it_can_display_member_recipes" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="24" assertions="3" time="0.084114"/>
+        <testcase name="it_can_display_create_recipe_form" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="40" assertions="2" time="0.051172"/>
+        <testcase name="it_can_store_new_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="51" assertions="4" time="0.085247"/>
+        <testcase name="it_can_edit_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="77" assertions="1" time="0.412806">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\RecipesControllerTest::it_can_edit_recipe
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -798,15 +798,15 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php:87</failure>
         </testcase>
-        <testcase name="it_can_update_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="93" assertions="5" time="0.099696">
+        <testcase name="it_can_update_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="93" assertions="5" time="0.110463">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\RecipesControllerTest::it_can_update_recipe
-Unable to find a file or directory at path [assets/upload/4BUKdmaFZrvkCR03ddqWh8HGrtH7sN74SeCoLfon.jpg].
+Unable to find a file or directory at path [assets/upload/iq5S0XhC8zT4iBpt0Be0RhtyUf4XlKAcdzBKob0X.jpg].
   Failed asserting that false is true.
 
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Filesystem\FilesystemAdapter.php:120
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php:122</failure>
         </testcase>
-        <testcase name="it_can_display_approved_recipes_on_home" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="126" assertions="1" time="0.480326">
+        <testcase name="it_can_display_approved_recipes_on_home" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="126" assertions="1" time="0.463728">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\RecipesControllerTest::it_can_display_approved_recipes_on_home
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -978,7 +978,7 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php:134</failure>
         </testcase>
-        <testcase name="it_can_display_recipe_details" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="140" assertions="1" time="0.362505">
+        <testcase name="it_can_display_recipe_details" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="140" assertions="1" time="0.339726">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\RecipesControllerTest::it_can_display_recipe_details
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -1134,19 +1134,19 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php:146</failure>
         </testcase>
-        <testcase name="it_can_display_create_recipe_form_by_editor" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="152" assertions="2" time="0.071862"/>
-        <testcase name="it_can_store_recipe_by_editor" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="163" assertions="5" time="0.086817">
+        <testcase name="it_can_display_create_recipe_form_by_editor" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="152" assertions="2" time="0.066306"/>
+        <testcase name="it_can_store_recipe_by_editor" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="163" assertions="5" time="0.066844">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\RecipesControllerTest::it_can_store_recipe_by_editor
-Unable to find a file or directory at path [assets/upload/kRU6EuRx9oouyUEqWqiL29Sjvi4x9iNIJHQgnf4S.jpg].
+Unable to find a file or directory at path [assets/upload/HSxjxfPkiWsgvS4YVzmJyY4dEVDmimhGJfDw3FFT.jpg].
   Failed asserting that false is true.
 
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Filesystem\FilesystemAdapter.php:120
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php:188</failure>
         </testcase>
-        <testcase name="it_displays_decline_message_in_index" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="192" assertions="1" time="0.101884"/>
-        <testcase name="it_denies_access_to_edit_other_users_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="208" assertions="1" time="0.073920"/>
-        <testcase name="it_denies_access_to_update_other_users_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="220" assertions="1" time="0.075299"/>
-        <testcase name="it_filters_recipes_by_category_on_home" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="234" assertions="1" time="0.473877">
+        <testcase name="it_displays_decline_message_in_index" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="192" assertions="1" time="0.096405"/>
+        <testcase name="it_denies_access_to_edit_other_users_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="208" assertions="1" time="0.073947"/>
+        <testcase name="it_denies_access_to_update_other_users_recipe" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="220" assertions="1" time="0.059731"/>
+        <testcase name="it_filters_recipes_by_category_on_home" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="234" assertions="1" time="0.420419">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\RecipesControllerTest::it_filters_recipes_by_category_on_home
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -1318,7 +1318,7 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php:240</failure>
         </testcase>
-        <testcase name="it_filters_recipes_by_foreign_category_on_home" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="247" assertions="1" time="0.421581">
+        <testcase name="it_filters_recipes_by_foreign_category_on_home" class="Tests\Feature\Controllers\RecipesControllerTest" classname="Tests.Feature.Controllers.RecipesControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php" line="247" assertions="1" time="0.462440">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\RecipesControllerTest::it_filters_recipes_by_foreign_category_on_home
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -1491,8 +1491,8 @@ C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\Test
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\RecipesControllerTest.php:253</failure>
         </testcase>
       </testsuite>
-      <testsuite name="Tests\Feature\Controllers\SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" tests="6" assertions="15" errors="0" warnings="0" failures="3" skipped="0" time="1.605790">
-        <testcase name="test_search_approved_recipes_in_home" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="18" assertions="1" time="0.427765">
+      <testsuite name="Tests\Feature\Controllers\SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" tests="6" assertions="15" errors="0" warnings="0" failures="3" skipped="0" time="1.753870">
+        <testcase name="test_search_approved_recipes_in_home" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="18" assertions="1" time="0.457793">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\SearchControllerTest::test_search_approved_recipes_in_home
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -1664,10 +1664,10 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php:26</failure>
         </testcase>
-        <testcase name="it_can_search_user_recipes" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="35" assertions="6" time="0.088334"/>
-        <testcase name="test_search_editors" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="74" assertions="3" time="0.084370"/>
-        <testcase name="test_search_members" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="93" assertions="3" time="0.067241"/>
-        <testcase name="test_search_editor_recipes" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="112" assertions="1" time="0.472632">
+        <testcase name="it_can_search_user_recipes" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="35" assertions="6" time="0.104273"/>
+        <testcase name="test_search_editors" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="74" assertions="3" time="0.078940"/>
+        <testcase name="test_search_members" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="93" assertions="3" time="0.109229"/>
+        <testcase name="test_search_editor_recipes" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="112" assertions="1" time="0.510092">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\SearchControllerTest::test_search_editor_recipes
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -1855,7 +1855,7 @@ Expected response status code [200] but received 500.
 C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:123
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php:123</failure>
         </testcase>
-        <testcase name="test_search_all_recipes" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="131" assertions="1" time="0.465448">
+        <testcase name="test_search_all_recipes" class="Tests\Feature\Controllers\SearchControllerTest" classname="Tests.Feature.Controllers.SearchControllerTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php" line="131" assertions="1" time="0.493542">
           <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\Controllers\SearchControllerTest::test_search_all_recipes
 Expected response status code [200] but received 500.
   Failed asserting that 200 is identical to 500.
@@ -2028,37 +2028,56 @@ C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Testing\Test
 C:\xampp\htdocs\CreacipeApp\tests\Feature\Controllers\SearchControllerTest.php:142</failure>
         </testcase>
       </testsuite>
-      <testsuite name="Tests\Feature\Mail\AccountDetailsMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\AccountDetailsMailTest.php" tests="2" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.073576">
-        <testcase name="test_account_details_mail_is_built_correctly" class="Tests\Feature\Mail\AccountDetailsMailTest" classname="Tests.Feature.Mail.AccountDetailsMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\AccountDetailsMailTest.php" line="15" assertions="8" time="0.030171"/>
-        <testcase name="test_account_details_mail_is_sent" class="Tests\Feature\Mail\AccountDetailsMailTest" classname="Tests.Feature.Mail.AccountDetailsMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\AccountDetailsMailTest.php" line="45" assertions="1" time="0.043405"/>
+      <testsuite name="Tests\Feature\Mail\AccountDetailsMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\AccountDetailsMailTest.php" tests="2" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.067828">
+        <testcase name="test_account_details_mail_is_built_correctly" class="Tests\Feature\Mail\AccountDetailsMailTest" classname="Tests.Feature.Mail.AccountDetailsMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\AccountDetailsMailTest.php" line="15" assertions="8" time="0.035589"/>
+        <testcase name="test_account_details_mail_is_sent" class="Tests\Feature\Mail\AccountDetailsMailTest" classname="Tests.Feature.Mail.AccountDetailsMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\AccountDetailsMailTest.php" line="45" assertions="1" time="0.032240"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Mail\EditorAccountMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\EditorAccountMailTest.php" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.032032">
-        <testcase name="test_editor_account_mail_builds_correctly" class="Tests\Feature\Mail\EditorAccountMailTest" classname="Tests.Feature.Mail.EditorAccountMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\EditorAccountMailTest.php" line="15" assertions="5" time="0.032032"/>
+      <testsuite name="Tests\Feature\Mail\EditorAccountMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\EditorAccountMailTest.php" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.037574">
+        <testcase name="test_editor_account_mail_builds_correctly" class="Tests\Feature\Mail\EditorAccountMailTest" classname="Tests.Feature.Mail.EditorAccountMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\EditorAccountMailTest.php" line="15" assertions="5" time="0.037574"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Mail\PasswordUpdatedMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\PasswordUpdatedMailTest.php" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.031191">
-        <testcase name="test_password_updated_mail_builds_correctly" class="Tests\Feature\Mail\PasswordUpdatedMailTest" classname="Tests.Feature.Mail.PasswordUpdatedMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\PasswordUpdatedMailTest.php" line="14" assertions="5" time="0.031191"/>
+      <testsuite name="Tests\Feature\Mail\PasswordUpdatedMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\PasswordUpdatedMailTest.php" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.033814">
+        <testcase name="test_password_updated_mail_builds_correctly" class="Tests\Feature\Mail\PasswordUpdatedMailTest" classname="Tests.Feature.Mail.PasswordUpdatedMailTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Mail\PasswordUpdatedMailTest.php" line="14" assertions="5" time="0.033814"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Models\RecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RecipeTest.php" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.164166">
-        <testcase name="test_recipe_fillable_attributes" class="Tests\Feature\Models\RecipeTest" classname="Tests.Feature.Models.RecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RecipeTest.php" line="15" assertions="1" time="0.029773"/>
-        <testcase name="test_recipe_belongs_to_user" class="Tests\Feature\Models\RecipeTest" classname="Tests.Feature.Models.RecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RecipeTest.php" line="37" assertions="2" time="0.062886"/>
-        <testcase name="test_recipe_belongs_to_status_recipe" class="Tests\Feature\Models\RecipeTest" classname="Tests.Feature.Models.RecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RecipeTest.php" line="49" assertions="2" time="0.071507"/>
+      <testsuite name="Tests\Feature\Models\RecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RecipeTest.php" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.212482">
+        <testcase name="test_recipe_fillable_attributes" class="Tests\Feature\Models\RecipeTest" classname="Tests.Feature.Models.RecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RecipeTest.php" line="15" assertions="1" time="0.034336"/>
+        <testcase name="test_recipe_belongs_to_user" class="Tests\Feature\Models\RecipeTest" classname="Tests.Feature.Models.RecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RecipeTest.php" line="37" assertions="2" time="0.084326"/>
+        <testcase name="test_recipe_belongs_to_status_recipe" class="Tests\Feature\Models\RecipeTest" classname="Tests.Feature.Models.RecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RecipeTest.php" line="49" assertions="2" time="0.093820"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Models\RoleTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RoleTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.124061">
-        <testcase name="test_role_fillable_attributes" class="Tests\Feature\Models\RoleTest" classname="Tests.Feature.Models.RoleTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RoleTest.php" line="14" assertions="1" time="0.035508"/>
-        <testcase name="test_role_has_many_users" class="Tests\Feature\Models\RoleTest" classname="Tests.Feature.Models.RoleTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RoleTest.php" line="26" assertions="4" time="0.088553"/>
+      <testsuite name="Tests\Feature\Models\RoleTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RoleTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.100620">
+        <testcase name="test_role_fillable_attributes" class="Tests\Feature\Models\RoleTest" classname="Tests.Feature.Models.RoleTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RoleTest.php" line="14" assertions="1" time="0.031389"/>
+        <testcase name="test_role_has_many_users" class="Tests\Feature\Models\RoleTest" classname="Tests.Feature.Models.RoleTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\RoleTest.php" line="26" assertions="4" time="0.069231"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Models\StatusRecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusRecipeTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.131984">
-        <testcase name="test_status_recipe_fillable_attributes" class="Tests\Feature\Models\StatusRecipeTest" classname="Tests.Feature.Models.StatusRecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusRecipeTest.php" line="14" assertions="1" time="0.029646"/>
-        <testcase name="test_status_recipe_has_many_recipes" class="Tests\Feature\Models\StatusRecipeTest" classname="Tests.Feature.Models.StatusRecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusRecipeTest.php" line="25" assertions="4" time="0.102338"/>
+      <testsuite name="Tests\Feature\Models\StatusRecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusRecipeTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.125818">
+        <testcase name="test_status_recipe_fillable_attributes" class="Tests\Feature\Models\StatusRecipeTest" classname="Tests.Feature.Models.StatusRecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusRecipeTest.php" line="14" assertions="1" time="0.031647"/>
+        <testcase name="test_status_recipe_has_many_recipes" class="Tests\Feature\Models\StatusRecipeTest" classname="Tests.Feature.Models.StatusRecipeTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusRecipeTest.php" line="25" assertions="4" time="0.094171"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Models\StatusTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.120743">
-        <testcase name="test_status_fillable_attributes" class="Tests\Feature\Models\StatusTest" classname="Tests.Feature.Models.StatusTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusTest.php" line="14" assertions="1" time="0.038344"/>
-        <testcase name="test_status_has_many_users" class="Tests\Feature\Models\StatusTest" classname="Tests.Feature.Models.StatusTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusTest.php" line="25" assertions="4" time="0.082399"/>
+      <testsuite name="Tests\Feature\Models\StatusTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.119950">
+        <testcase name="test_status_fillable_attributes" class="Tests\Feature\Models\StatusTest" classname="Tests.Feature.Models.StatusTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusTest.php" line="14" assertions="1" time="0.031306"/>
+        <testcase name="test_status_has_many_users" class="Tests\Feature\Models\StatusTest" classname="Tests.Feature.Models.StatusTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\StatusTest.php" line="25" assertions="4" time="0.088644"/>
       </testsuite>
-      <testsuite name="Tests\Feature\Models\UserTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.194763">
-        <testcase name="test_user_fillable_attributes" class="Tests\Feature\Models\UserTest" classname="Tests.Feature.Models.UserTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php" line="15" assertions="1" time="0.050904"/>
-        <testcase name="test_user_belongs_to_role" class="Tests\Feature\Models\UserTest" classname="Tests.Feature.Models.UserTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php" line="33" assertions="2" time="0.066737"/>
-        <testcase name="test_user_belongs_to_status" class="Tests\Feature\Models\UserTest" classname="Tests.Feature.Models.UserTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php" line="45" assertions="2" time="0.077122"/>
+      <testsuite name="Tests\Feature\Models\UserTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php" tests="3" assertions="3" errors="1" warnings="0" failures="0" skipped="0" time="0.169482">
+        <testcase name="test_user_fillable_attributes" class="Tests\Feature\Models\UserTest" classname="Tests.Feature.Models.UserTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php" line="15" assertions="1" time="0.034506"/>
+        <testcase name="test_user_belongs_to_role" class="Tests\Feature\Models\UserTest" classname="Tests.Feature.Models.UserTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php" line="33" assertions="0" time="0.056790">
+          <error type="Illuminate\Database\QueryException">Tests\Feature\Models\UserTest::test_user_belongs_to_role
+Illuminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'et' for key 'roles.roles_name_unique' (SQL: insert into `roles` (`name`, `updated_at`, `created_at`) values (et, 2025-01-07 14:30:34, 2025-01-07 14:30:34))
+
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:720
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:546
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Connection.php:498
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3322
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:1869
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1330
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1295
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1138
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:330
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:235
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:339
+C:\xampp\htdocs\CreacipeApp\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:279
+C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php:35</error>
+        </testcase>
+        <testcase name="test_user_belongs_to_status" class="Tests\Feature\Models\UserTest" classname="Tests.Feature.Models.UserTest" file="C:\xampp\htdocs\CreacipeApp\tests\Feature\Models\UserTest.php" line="45" assertions="2" time="0.078186"/>
       </testsuite>
     </testsuite>
   </testsuite>
